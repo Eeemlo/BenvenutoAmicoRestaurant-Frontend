@@ -1,0 +1,25 @@
+/*Färgschema*/
+$bg-color: #7c3924;
+$bg-color-2: #C8835C;
+$pop-color: #c5d32e;
+$dark-color: #252323;
+$light-color: #F3EBEB;
+
+/*font*/
+$standard-font: "Bodoni Moda", "Cormorant Garamond", serif;
+
+/*Placeholders*/
+%button {
+padding: 0.5em 1.8em;
+border-top: 1px solid $pop-color;
+border-bottom: 1px solid $pop-color;
+text-transform: uppercase;
+text-decoration: none;
+color: #fff;
+}
+
+%chapterHeader {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    margin-left: 20%;
+}

@@ -7,8 +7,14 @@
     <title>Benvenuto Amico Trattoria</title>
 
 
-    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.scss">
     <script src="js/main.js" type="module"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -33,14 +39,38 @@
     </header>
     <main>
         <div id="introText">
-            <h1>Matupplevelser för alla dina sinnen, upplev vår hyllning till Italien</h1>
+            <h1>
+                Njut av en symfoni för dina sinnen, där varje smak är en kärleks&shy;förklaring till Italien.</h1>
         </div>
 
         <div id="welcomeText">
+            <div id="quote">
+            <span>"</span>
             <h2>Varmt välkommen till oss på Benvenuto Amico. Namnet betyder en lugn stund på italienska, det är precis
                 vad som väntar dig hos oss, en smakfull, lugn stund.</h2>
+            </div>
+            <p>- Frida & Linus, med personal</p>
+        </div>
 
-                <p>- Frida & Linus, med personal</p>
+        <div id="menuText">
+            <div>
+            <h1>Menyer</h1>
+            <p>Utforska våra menyer som erbjuder en smakresa för varje tillfälle. Från läckra lunchalternativ som lyfter
+                vardagen till härliga middagar som sätter guldkant på tillvaron.<br><br>
+                För de tillfällen då du vill njuta av vår mat i hemmets lugn har vi även ett utbud av goda
+                takeaway-alternativ.<br><br>
+                Komplettera din måltid med något av våra noggrant utvalda viner. Upptäck våra menyer och låt oss ta dig
+                med på en kulinarisk resa!</p>
+                <button class="button">Menyer</button>
+            </div>
+            <picture id="menuImg">
+                <source srcset="images/menu-img.jpg?as=webp&width=700&height=850" type="image/webp">
+                <img src="images/menu-img.jpg?width=700&height=850" alt="Logotyp">
+            </picture>
+        </div>
+
+        <div id="igContainer">
+            <h1>Senaste från Instagram</h1>
         </div>
     </main>
 </body>
