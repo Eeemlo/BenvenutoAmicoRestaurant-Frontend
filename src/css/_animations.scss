@@ -1,0 +1,93 @@
+@use "var";
+
+/*Animation för stor bokningstext*/
+@keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset:  20%;
+      fill: var.$bg-color-2;
+  
+    }
+    
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffset: -20%;
+      fill: hsla(25, 76%, 29%, 0)
+    }}
+
+    /*Fade in-animation*/
+
+    @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(200px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+    /*Fade in-animation*/
+
+    @keyframes fadeInSkew {
+        0% {
+            opacity: 0;
+            transform: translateY(200px) rotateZ(20deg);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) rotateZ(0);
+          }
+        }
+
+    /*Animation vänster*/
+
+    @keyframes slideInLeft {
+        100% { 
+            left: 0;
+            opacity: 1;
+         }
+    }
+
+    @keyframes slideInRight {
+        100% { 
+            right: 0;
+            opacity: 1;
+         }
+    }
+
+      /*Animation höger*/
+      @keyframes bounceInRight {
+        0% {
+          opacity: 0;
+          transform: translateX(2000px);
+        }
+        60% {
+          transform: translateX(-20px);
+        }
+        80% {
+          transform: translateX(5px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }

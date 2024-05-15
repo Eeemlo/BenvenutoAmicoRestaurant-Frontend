@@ -7,6 +7,7 @@ $light-color: #F3EBEB;
 
 /*font*/
 $standard-font: "Bodoni Moda", "Cormorant Garamond", serif;
+$pop-font: "Tangerine", Cursive;
 
 /*Placeholders*/
 %button {
@@ -20,6 +21,5 @@ color: #fff;
 
 %chapterHeader {
     text-transform: uppercase;
-    margin-bottom: 50px;
-    margin-left: 20%;
+    margin-bottom: 60px;
 }

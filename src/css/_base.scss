@@ -1,4 +1,5 @@
 @use "var";
+@use "animations";
 
 *,
 *::before,
@@ -21,7 +22,7 @@ header {
 }
 
 h1 {
-    color: #D5E14D;
+    color: #d5e14d;
     font-weight: 400;
     letter-spacing: 4;
     line-height: 1.3em;
@@ -34,59 +35,83 @@ h2 {
     font-weight: 400;
 }
 
-#logo {
+.logo {
     margin: 20px 5px 5px 30px;
 }
 
+nav {
+    min-height: 8em;
+}
+
 .ulNav {
-    float: right;
+    right: 0;
     list-style-type: none;
     margin-top: -80px;
+    position: fixed;
+    z-index: 10;
+
+    li {
+        margin: 20px 0;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @extend %button;
+        transition: ease 1s;
+    }
+
+    a:hover {
+        background-color: #d5e14d;
+        color: var.$dark-color;
+    }
 }
 
-.ulNav li {
-margin: 20px 0;
-}
-
-.ulNav li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   @extend %button;
-}
 
 #bookBtn {
-    color:black;
+    color: black;
     background-color: var.$pop-color;
-    margin-bottom: 30px;
+    transition: ease 1s;
+}
+
+#bookBtn:hover {
+    padding: 1em 2.5em;
 }
 
 #headerVideo {
     max-width: 1700px;
-    width: 80%;
+    width: 70%;
     margin-top: -130px;
+    position: relative;
+    left: -1900px;
+    opacity: 0;
+    animation: slideInLeft 2s both running;
 }
 
 #introText {
-    max-width: 50em;
-    margin-top: -40px;
+    max-width: 1400px;
+    width: 80%;
+    margin: -80px auto 0;
     position: relative;
-    left: 5%;
 }
 
 #introText h1 {
+    max-width: 15em;
     font-style: italic;
     font-size: 3.5em;
+    animation: fadeInSkew 1.5s 2s both running;
 }
 
 #welcomeText {
-    max-width: 1700px;
-    width: 68%;
-    margin: 200px auto 0;
+    max-width: 1400px;
+    width: 80%;
+    margin: 200px auto 10%;
     color: #fff;
 
     #quote {
         display: flex;
+        max-width: 1100px;
 
         span {
             font-size: 300;
@@ -100,18 +125,19 @@ margin: 20px 0;
 }
 
 #menuText {
-    margin-top: 150px;
+    margin: 150px auto 0;
+    max-width: 1400px;
+    width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
 
     p {
         max-width: 370px;
-        margin-left: 20%;
     }
 
     h1 {
-    @extend %chapterHeader;
+        @extend %chapterHeader;
     }
 }
 
@@ -123,13 +149,145 @@ margin: 20px 0;
     margin-top: 50px;
     font-family: var.$standard-font;
     letter-spacing: 2.5;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.button:hover {
+    background-color: #d5e14d;
+    color: var.$dark-color;
 }
 
 #igContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 80%;
 
     h1 {
         @extend %chapterHeader;
         font-style: italic;
         margin-top: 200px;
+        float: right;
+        align-self: flex-end;
+    }
+
+    div {
+        max-width: 1400px;
+        width: 100%;
+        height: 300px;
+        background-color: black;
+    }
+
+    .button {
+        align-self: flex-end;
     }
 }
+
+#hoursContainer {
+    margin: 200px auto 0;
+    max-width: 1400px;
+    width: 80%;
+
+    h1 {
+        @extend %chapterHeader;
+    }
+
+    #openingHrs {
+        display: flex;
+        justify-content: space-between;
+
+        .openingBox {
+            border: 1px solid var.$bg-color-2;
+            padding: 20px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+#book {
+    margin: 100px 0;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #bookText {
+        letter-spacing: 40px;
+        stroke: var.$pop-color;
+        font-size: 300px;
+        font-weight: 400;
+        stroke-width: 3;
+        cursor: pointer;
+
+        animation: textAnimate 8s infinite alternate;
+    }
+
+    #bookText:hover {
+        animation-play-state: paused;
+    }
+}
+
+footer {
+    background-color: var.$bg-color-2;
+    min-height: 600px;
+    padding-top: 100px;
+
+    .logoLinks {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1400px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var.$dark-color;
+        font-weight: 600;
+    }
+}
+
+
+/*Animeringar*/
+
+/* Kod från: https://www.sliderrevolution.com/resources/css-animations-on-scroll/*/
+
+.animate {
+    /* initially hide animatable objects */
+    visibility: hidden;
+  
+    /* initially pause animatable objects their animations */
+    animation-play-state: paused;
+  }
+  
+  /* show objects being animated */
+  .animated {
+    visibility: visible;
+  }
+  
+
+  .animated.fadeInUp {
+    animation: fadeInUp .8s both running;
+  }
+
+  .animated.bounceIn {
+    animation: bounceIn .5s both running;
+  }
+  .animated.bounceInRight {
+    animation: bounceInRight .5s both running;
+  }
+  .animated.bounceInLeft {
+    animation: bounceInLeft .5s both running;
+  }
