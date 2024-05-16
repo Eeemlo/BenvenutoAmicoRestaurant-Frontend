@@ -23,7 +23,7 @@ header {
 }
 
 h1 {
-    color: #d5e14d;
+    color: var.$pop-color;
     font-weight: 400;
     letter-spacing: 4;
     line-height: 1.3em;
@@ -37,7 +37,7 @@ h2 {
 }
 
 h3 {
-    color: var.$dark-color;
+    color: var.$light-color;
     text-transform: uppercase;
 }
 
@@ -104,6 +104,7 @@ nav {
 
 #introText h1 {
     max-width: 15em;
+    margin-left: 260px; 
     font-style: italic;
     font-size: 3.5em;
     animation: fadeInSkew 1.5s 2s both running;
@@ -160,8 +161,8 @@ nav {
 }
 
 .button:hover {
-    background-color: #d5e14d;
-    color: var.$dark-color;
+    background-color: var.$pop-color;
+    color: var.$black-color;
 }
 
 #igContainer {
@@ -206,7 +207,7 @@ nav {
         justify-content: space-between;
 
         .openingBox {
-            border: 1px solid var.$bg-color-2;
+            border: 1px solid var.$pop-color;
             padding: 20px 60px;
             display: flex;
             flex-direction: column;
@@ -236,12 +237,12 @@ nav {
 
     #bookText:hover {
         animation-play-state: paused;
-        stroke: #9aa434;
+        stroke: var.$bg-color-2;
     }
 }
 
 footer {
-    background-color: var.$bg-color-2;
+    background-color: var.$black-color;
     min-height: 600px;
     padding-top: 100px;
 
@@ -261,18 +262,11 @@ footer {
     a {
         text-transform: uppercase;
         text-decoration: none;
-        color: var.$dark-color;
+        color: var.$light-color;
         font-weight: 600;
     }
 }
 
-.subFooter {
-    background-color: var.$bg-color;
-    
-    a {
-    color: var.$light-color;
-    }
-}
 
 
 /*MENYSIDOR*/
@@ -306,15 +300,15 @@ margin: 0 auto;
 
     
     a:hover {
-        background-color: #d5e14d;
-        color: var.$dark-color;
+        background-color: var.$pop-color;
+        color: var.$black-color;
         padding: 0.5em 1.8em;
         font-weight: 400;
     }
 
     .active {
-        background-color: #d5e14d;
-        color: var.$dark-color;
+        background-color: var.$pop-color;
+        color: var.$black-color;
         padding: 0.5em 1.8em;
         font-weight: 400;
     }
@@ -326,15 +320,15 @@ margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var.$bg-color-2;
     padding: 80px 10px;
-    color: var.$dark-color;
 
+    h2 {
+        color: var.$light-color;
+    }
 }
 
 .menuContainer {
-    border: 1px solid var.$bg-color;
-    background-color: var.$light-color;
+    border: 1px solid var.$pop-color;
     max-width: 60em;
     width: 100%;
     display: flex;
@@ -354,6 +348,15 @@ margin: 0 auto;
 }
 
 
+/*LUNCHMENY*/
+#lunchInfo {
+    p {
+        text-align: center;
+    }
+}
+
+
+
 /*Animeringar*/
 
 /* Kod från: https://www.sliderrevolution.com/resources/css-animations-on-scroll/*/
@@ -371,6 +374,9 @@ margin: 0 auto;
     visibility: visible;
   }
   
+  .animated.fadeIn {
+    animation: fadeIn .8s both running;
+  }
 
   .animated.fadeInUp {
     animation: fadeInUp .8s both running;
