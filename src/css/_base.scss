@@ -41,6 +41,10 @@ h3 {
     text-transform: uppercase;
 }
 
+p {
+    line-height: 1.8;
+}
+
 .logo {
     margin: 20px 5px 5px 30px;
     top: 20;
@@ -156,6 +160,13 @@ nav {
 
     h1 {
         @extend %chapterHeader;
+    }
+
+    h2 {
+        font-family: var.$pop-font;
+        color: var.$pop-color;
+        margin-bottom: 50px;
+        font-size: 2.5em;
     }
 }
 
@@ -437,6 +448,8 @@ footer {
 
 /* Kod från: https://www.sliderrevolution.com/resources/css-animations-on-scroll/*/
 
+
+
 .animate {
     /* initially hide animatable objects */
     visibility: hidden;
@@ -458,8 +471,8 @@ footer {
     animation: fadeInUp 0.8s both running;
 }
 
-.animated.bounceIn {
-    animation: bounceIn 0.5s both running;
+.animated.increaseWidth{
+    animation: increaseWidth 0.5s .2s both running;
 }
 .animated.bounceInRight {
     animation: bounceInRight 0.5s both running;
@@ -467,3 +480,111 @@ footer {
 .animated.bounceInLeft {
     animation: bounceInLeft 0.5s both running;
 }
+
+
+/*ADMIN-GRÄNSSNITT!!!*/
+
+/*LOGGA IN - FORMULÄR*/
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height: 70vh;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-top: 15px;
+    }
+    
+    input {
+        width: 300px;
+        margin-bottom: 5px;
+    }
+    
+    input[type=submit] {
+        margin-top: 15px;
+        max-width: 150px;
+        width: 100%;
+    }
+    
+    span {
+        max-width: 370px;
+        width: 100%;
+        color: red;
+        font-size: 0.7em;
+        line-height: 1;
+        font-weight: 600;
+    }
+}
+
+/*ADMIN - startsida*/
+.adminPanel {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexRow {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+
+    div {
+        max-width: 450px;
+        width: 100%;
+        padding: 5em 1;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #box1{
+        background-color: rgb(125, 109, 87);
+    }
+
+    #box1:hover {
+        background-color: rgb(104, 91, 73);
+        cursor: pointer;
+    }
+
+    #box2 {
+        background-color: var.$bg-color-2;
+    }
+
+    
+    #box2:hover {
+        background-color: #874834;
+        cursor: pointer;
+    }
+
+    #box3 {
+        background-color: var.$pop-color;
+    }
+
+    #box3:hover {
+        background-color: #9b674a;
+        cursor: pointer;
+    }
+
+    #box4 {
+        background-color: rgb(60, 60, 60);
+    }
+
+    #box4:hover {
+        background-color: rgb(41, 41, 41);
+        cursor: pointer;
+    }
+}
+

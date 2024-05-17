@@ -16,3 +16,15 @@ document.addEventListener("scroll", function (event) {
 });
 
 
+document.addEventListener("scroll", function (event) {
+    var images = document.querySelectorAll(".image-animate");
+
+    images.forEach(function (image) {
+        var imageBottom = image.getBoundingClientRect().top;
+        var windowHeight = window.innerHeight;
+
+        if (imageBottom < windowHeight + 1) {
+            image.classList.add("animated");
+        }
+    });
+});
