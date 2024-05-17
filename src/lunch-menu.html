@@ -14,60 +14,75 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Tangerine:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nothing+You+Could+Do&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <header>
         <a href="index.html">
-            <picture class="logo">
+            <picture class="logo" id="noAnimation">
                 <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
                 <img src="images/rest_logo.png?width=150px" alt="Logotyp">
-            </picture></a>
+            </picture>
+        </a>
 
-        <nav>
+        <nav id="noAnimation">
             <ul class="ulNav">
                 <li><a id="bookBtn"
                         href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
-                <li><a href="menus.html" class="active">Menyer</a></li>
+                <li><a href="lunch-menu.html" class="active">Menyer</a></li>
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="menuHeader">
-        <h1 id="menuHeading">
-    Utforska våra menyer
-        </h1>
-        <ul class="menuNav">
-            <li><a href="dinner-menu.html">Middag</a></li>
-            <li><a href="lunch-menu.html" class="active">Lunch</a></li>
-            <li><a href="takeaway.html">Avhämtning</a></li>
-            <li><a href="drinks-menu.html">Dryck</a></li>
-        </ul>
-    </div>
+        <div class="menuHeader" id="noAnimation">
+            <h1 id="menuHeading">
+                Utforska våra menyer
+            </h1>
+            <ul class="menuNav">
+                <li><a href="dinner-menu.html">Middag</a></li>
+                <li><a href="lunch-menu.html" class="active">Lunch</a></li>
+                <li><a href="takeaway.html">Avhämtning</a></li>
+                <li><a href="drinks-menu.html">Dryck</a></li>
+            </ul>
+        </div>
 
-<div class="subMain">
-    <div id="lunchInfo" class="menuContainer"><h2>Lunchmeny</h2>
-    <h3 id="currentWeek"></h3>
-<p>
-    Våra öppettider för lunch är måndag till fredag 11.30-14.30. <br>
+        <div class="subMain">
+            <h1>Lunchmeny</h1>
+            <h3 id="currentWeek"></h3>
+            <div id="lunchInfo" class="menuContainer">
+                <p>
+                    Våra öppettider för lunch är måndag till fredag 11.30-14.30. <br>
 
-Välkomna!<br><br>
+                    Välkomna!<br><br>
 
-Dagens kött eller pasta 140:- / Dagens fisk 150:- inklusive bryggkaffe alt te, kolsyrat vatten & kaka. Take away kött & pasta 129:- / fisk 139:- <br><br>
+                    Dagens kött eller pasta 140:- / Dagens fisk 150:- inklusive bryggkaffe alt te, kolsyrat vatten &
+                    kaka. Take away kött & pasta 129:- / fisk 139:- <br><br>
 
-Vi arbetar med närproducerat i mån av säsong. Våra köttprodukter kommer alltid från gårdar i närområdet oavsett tid på året.
-</p></div>
-    <div id="lunches" class="menuContainer">
-        <div id="mondayLunch"><h4>Måndag</h4></div>
-        <div id="tuesdayLunch"><h4>Tisdag</h4></div>
-        <div id="wednesdayLunch"><h4>Onsdag</h4></div>
-        <div id="thursdayLunch"><h4>Torsdag</h4></div>
-        <div id="fridayLunch"><h4>Fredag</h4></div>
-    </div>
-</div>
+                    Vi arbetar med närproducerat i mån av säsong. Våra köttprodukter kommer alltid från gårdar i
+                    närområdet oavsett tid på året.
+                </p>
+            </div>
+            <div id="lunches" class="menuContainer">
+                <div id="mondayLunch">
+                    <h4>Måndag</h4>
+                </div>
+                <div id="tuesdayLunch">
+                    <h4>Tisdag</h4>
+                </div>
+                <div id="wednesdayLunch">
+                    <h4>Onsdag</h4>
+                </div>
+                <div id="thursdayLunch">
+                    <h4>Torsdag</h4>
+                </div>
+                <div id="fridayLunch">
+                    <h4>Fredag</h4>
+                </div>
+            </div>
+        </div>
 
     </main>
 

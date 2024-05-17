@@ -16,7 +16,6 @@ body {
     color: var.$light-color;
 }
 
-
 header {
     display: flex;
     flex-direction: column;
@@ -24,6 +23,7 @@ header {
 
 h1 {
     color: var.$pop-color;
+    font-family: var.$pop-font;
     font-weight: 400;
     letter-spacing: 4;
     line-height: 1.3em;
@@ -43,10 +43,19 @@ h3 {
 
 .logo {
     margin: 20px 5px 5px 30px;
+    top: 20;
+    position: relative;
+    left: -700px;
+    opacity: 0;
+    animation: slideInLeft 1s both running;
 }
 
 nav {
-    min-height: 8em;
+    min-height: 10em;
+    position: relative;
+    right: -900px;
+    opacity: 0;
+    animation: slideInRight 1s 1.2s both running;
 }
 
 .ulNav {
@@ -55,6 +64,7 @@ nav {
     margin-top: -80px;
     position: fixed;
     z-index: 10;
+
 
     li {
         margin: 20px 0;
@@ -79,7 +89,6 @@ nav {
     }
 }
 
-
 #bookBtn {
     color: black;
     background-color: var.$pop-color;
@@ -92,22 +101,24 @@ nav {
     position: relative;
     left: -1900px;
     opacity: 0;
-    animation: slideInLeft 2s both running;
+    animation: slideInLeft 2s .3s both running;
 }
 
 #introText {
+    font-family: var.$pop-font;
+    font-size: 28px;
     max-width: 1400px;
     width: 80%;
-    margin: -80px auto 0;
+    margin: -120px auto 0;
     position: relative;
 }
 
 #introText h1 {
-    max-width: 15em;
-    margin-left: 260px; 
+    max-width: 10em;
+    margin-left: 160px;
     font-style: italic;
     font-size: 3.5em;
-    animation: fadeInSkew 1.5s 2s both running;
+    animation: fadeInSkew 1.5s 1.5s both running;
 }
 
 #welcomeText {
@@ -122,7 +133,7 @@ nav {
 
         span {
             font-size: 300;
-            line-height: 0.7;
+            line-height: 0.4;
         }
     }
 }
@@ -137,7 +148,7 @@ nav {
     width: 80%;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
 
     p {
         max-width: 370px;
@@ -254,7 +265,6 @@ footer {
         margin: 0 auto;
     }
 
-
     ul {
         list-style-type: none;
     }
@@ -267,17 +277,26 @@ footer {
     }
 }
 
-
-
 /*MENYSIDOR*/
 
 .menuHeader {
-max-width: 1400px;
-width: 93%;
-margin: 0 auto;
+    max-width: 1400px;
+    width: 93%;
+    margin: 0 auto;
+    position: relative;
+    left: -1500px;
+    opacity: 0;
+    animation: slideInLeft 1.5s 0.2s both running;
+}
+
+#noAnimation {
+    left: 0px;
+    opacity: 1;
+    animation: none;
 }
 
 #menuHeading {
+    font-family: var.$standard-font;
     padding-bottom: 25px;
     border-bottom: 2px solid var.$pop-color;
     margin: -110px 5px 3.5%;
@@ -292,13 +311,11 @@ margin: 0 auto;
     margin-top: -68px;
     margin-left: 5px;
 
-
     a {
         border: none;
         padding: 0.5em 1.8em;
     }
 
-    
     a:hover {
         background-color: var.$pop-color;
         color: var.$black-color;
@@ -321,6 +338,16 @@ margin: 0 auto;
     justify-content: center;
     align-items: center;
     padding: 80px 10px;
+
+    h1 {
+        animation: fadeInUp 0.8s .6s both running;
+    }
+
+    h2,
+    h3 {
+        font-family: var.$pop-font;
+        text-transform: none;
+    }
 
     h2 {
         color: var.$light-color;
@@ -345,8 +372,21 @@ margin: 0 auto;
     .courseName {
         font-weight: 600;
     }
+
+    h2,
+    h3 {
+        font-family: var.$standard-font;
+        text-transform: uppercase;
+    }
 }
 
+#smallCourse {
+    animation: fadeInUp 0.8s 0.8s both running;
+}
+
+#preCourse {
+    animation: fadeInUp 0.8s 1s both running;
+}
 
 /*LUNCHMENY*/
 #lunchInfo {
@@ -355,7 +395,43 @@ margin: 0 auto;
     }
 }
 
+#currentWeek {
+    animation: fadeInUp 0.8s .8s both running;
+}
 
+#lunchInfo {
+    animation: fadeInUp 0.8s 1s both running;
+}
+
+#lunches {
+    animation: fadeInUp 0.8s 1.2s both running;
+}
+
+/*TAKEAWAYMENY*/
+#takeawayDishes,
+#takeawaySnacks {
+    h2 {
+        font-family: var.$standard-font;
+    }
+}
+
+#takeaways {
+    animation: fadeInUp 0.8s 1.2s both running;
+}
+
+/*OM OSS*/
+#aboutIntro {
+    @extend #introText;
+    margin-top: 100px;
+    margin-bottom: 300px;
+
+    h1 {
+        max-width: 20em;
+        margin-left: 0px;
+        font-size: 2.6em;
+        animation: fadeInSkew 1.5s 1.5s both running;
+    }
+}
 
 /*Animeringar*/
 
@@ -364,30 +440,30 @@ margin: 0 auto;
 .animate {
     /* initially hide animatable objects */
     visibility: hidden;
-  
+
     /* initially pause animatable objects their animations */
     animation-play-state: paused;
-  }
-  
-  /* show objects being animated */
-  .animated {
+}
+
+/* show objects being animated */
+.animated {
     visibility: visible;
-  }
-  
-  .animated.fadeIn {
-    animation: fadeIn .8s both running;
-  }
+}
 
-  .animated.fadeInUp {
-    animation: fadeInUp .8s both running;
-  }
+.animated.fadeIn {
+    animation: fadeIn 0.8s both running;
+}
 
-  .animated.bounceIn {
-    animation: bounceIn .5s both running;
-  }
-  .animated.bounceInRight {
-    animation: bounceInRight .5s both running;
-  }
-  .animated.bounceInLeft {
-    animation: bounceInLeft .5s both running;
-  }
+.animated.fadeInUp {
+    animation: fadeInUp 0.8s both running;
+}
+
+.animated.bounceIn {
+    animation: bounceIn 0.5s both running;
+}
+.animated.bounceInRight {
+    animation: bounceInRight 0.5s both running;
+}
+.animated.bounceInLeft {
+    animation: bounceInLeft 0.5s both running;
+}

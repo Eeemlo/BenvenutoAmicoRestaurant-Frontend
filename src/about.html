@@ -13,19 +13,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Tangerine:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nothing+You+Could+Do&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <header>
         <a href="index.html">
-        <picture class="logo">
-            <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
-            <img src="images/rest_logo.png?width=150px" alt="Logotyp">
-        </picture></a>
+            <picture class="logo">
+                <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
+                <img src="images/rest_logo.png?width=150px" alt="Logotyp">
+            </picture>
+        </a>
 
-        <nav>
+        <nav id="noAnimation">
             <ul class="ulNav">
                 <li><a id="bookBtn"
                         href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
@@ -33,51 +34,53 @@
                 <li><a href="about.html" class="active">Om oss</a></li>
             </ul>
         </nav>
-
-        <video autoplay muted loop id="headerVideo">
-            <source src="images/background_mov.mp4" type="video/mp4">
-        </video>
     </header>
     <main>
-        <div id="introText">
-            <h1>
-                Njut av en symfoni för dina sinnen, där varje smak är en kärleks&shy;förklaring till Italien.</h1>
-        </div>
-
-        <div id="welcomeText">
-            <div id="quote" class="animate fadeInUp">
-                <span>"</span>
-                <h2>Varmt välkommen till oss på Benvenuto Amico. Namnet betyder en lugn stund på italienska, det är
-                    precis
-                    vad som väntar dig hos oss, en smakfull, lugn stund.</h2>
-            </div>
-            <p class="animate fadeInUp">- Frida & Linus, med personal</p>
+        <div id="aboutIntro">
+            <h1>En mat- och vinupplevelse utöver det vanliga..</h1>
         </div>
 
         <div id="menuText">
             <div>
-                <h1 class="animate fadeInUp">Menyer</h1>
-                <p class="animate fadeInUp">Utforska våra menyer som erbjuder en smakresa för varje tillfälle. Från läckra lunchalternativ som
-                    lyfter
-                    vardagen till härliga middagar som sätter guldkant på tillvaron.<br><br>
-                    För de tillfällen då du vill njuta av vår mat i hemmets lugn har vi även ett utbud av goda
-                    takeaway-alternativ.<br><br>
-                    Komplettera din måltid med något av våra noggrant utvalda viner. Upptäck våra menyer och låt oss ta
-                    dig
-                    med på en kulinarisk resa!</p>
-                <button class="button animate fadeInUp">Menyer</button>
+                <h1 class="animate fadeInUp">Dröm om Italien</h1>
+                <p class="animate fadeInUp">Momenti Liberi är mer än bara en restaurang – det är en dröm om Italien. Vi
+                    har skapat en plats där du kan njuta av genuin italiensk matlagning, lagad med kärlek och de bästa
+                    råvarorna. Vår inspirerande restaurangmiljö tar dig med på en resa till det vackra Italien, där
+                    smaker och dofter förenas i en harmonisk symfoni.</p>
             </div>
             <picture id="menuImg">
-                <source srcset="images/menu-img.jpg?as=webp&width=600&height=850" type="image/webp">
-                <img src="images/menu-img.jpg?width=600&height=850" alt="Logotyp">
+                <source srcset="images/italien.jpg?as=webp&width=500&height=650" type="image/webp">
+                <img src="images/italien.jpg?width=500&height=650" alt="Logotyp">
             </picture>
         </div>
 
-        <div id="igContainer">
-            <h1 class="animate fadeInUp">Senaste från Instagram</h1>
-            <div class="ig animate fadeInUp"></div> <!--ERSÄTT MED EMBED IG KOD-->
-            <button class="button animate fadeInUp">Instagram</button>
+        <div id="menuText">
+            <picture id="menuImg">
+                <source srcset="images/narodlat.jpg?as=webp&width=500&height=650" type="image/webp">
+                <img src="images/narodlat.jpg?width=500&height=650" alt="Logotyp">
+            </picture>
+            <div>
+                <h1 class="animate fadeInUp">Mat i säsong</h1>
+                <p class="animate fadeInUp">Vi är stolta över att erbjuda mat som är närproducerad och i säsong. Vårt
+                    vinsortiment är noga utvalt för att komplettera våra rätter på bästa sätt. Vi tror på att kvalitet
+                    och kunskap är nyckeln till en smakupplevelse utöver det vanliga. Njut av en härlig måltid på vår
+                    vinterveranda med den porlande Lillån bara några meter bort.</p>
+            </div>
         </div>
+
+        <div id="menuText">
+            <div>
+                <h1 class="animate fadeInUp">Frida och Linus</h1>
+                <p class="animate fadeInUp">Bakom Momenti Liberi står Frida och Linus med personal. Vi brinner för att
+                    skapa en oas för nutidsmänniskan – en plats där du kan koppla av och njuta av livets goda. Välkommen
+                    till Momenti Liberi! 🍝🍷</p>
+            </div>
+            <picture id="menuImg">
+                <source srcset="images/fridalinus.jpg?as=webp&width=500&height=650" type="image/webp">
+                <img src="images/fridalinus.jpg?width=500&height=650" alt="Logotyp">
+            </picture>
+        </div>
+
 
         <div id="hoursContainer">
             <h1 class="animate fadeInUp">Öppettider</h1>
@@ -104,8 +107,8 @@
         <div id="book" class="animate fadeInUp">
             <svg width="790" height="400">
                 <a href="book.html" target="_blank">
-                <text id="bookText" x="0" y="80%">Boka</text>
-            </a>
+                    <text id="bookText" x="0" y="80%">Boka</text>
+                </a>
             </svg>
         </div>
     </main>

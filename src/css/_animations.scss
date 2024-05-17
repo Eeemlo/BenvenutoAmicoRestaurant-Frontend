@@ -68,37 +68,3 @@
          }
     }
 
-      /*Animation höger*/
-      @keyframes bounceInRight {
-        0% {
-          opacity: 0;
-          transform: translateX(2000px);
-        }
-        60% {
-          transform: translateX(-20px);
-        }
-        80% {
-          transform: translateX(5px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes bounceIn {
-        0% {
-          opacity: 0;
-          transform: scale(0.3);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        70% {
-          transform: scale(0.9);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
