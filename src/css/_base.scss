@@ -472,7 +472,7 @@ footer {
 }
 
 .animated.increaseWidth{
-    animation: increaseWidth 0.5s .2s both running;
+    animation: increaseWidth 0.8s  both running;
 }
 .animated.bounceInRight {
     animation: bounceInRight 0.5s both running;
@@ -525,6 +525,42 @@ form {
 }
 
 /*ADMIN - startsida*/
+#adminHeader {
+    display: flex;
+    justify-content:space-between;
+};
+
+#logoutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: last-baseline;
+    width: 220px;
+
+span {
+    margin-top: 25px;
+}
+
+    button {
+        max-width: 140px;
+        margin-top: 20px;
+    }
+}
+
+.adminNav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+
+    li {
+        padding: 5px;
+        margin: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .adminPanel {
     min-height: 80vh;
     display: flex;
@@ -549,42 +585,173 @@ form {
         justify-content: center;
         align-items: center;
     }
-
-    #box1{
-        background-color: rgb(125, 109, 87);
-    }
-
-    #box1:hover {
-        background-color: rgb(104, 91, 73);
-        cursor: pointer;
-    }
-
-    #box2 {
-        background-color: var.$bg-color-2;
-    }
-
-    
-    #box2:hover {
-        background-color: #874834;
-        cursor: pointer;
-    }
-
-    #box3 {
-        background-color: var.$pop-color;
-    }
-
-    #box3:hover {
-        background-color: #9b674a;
-        cursor: pointer;
-    }
-
-    #box4 {
-        background-color: rgb(60, 60, 60);
-    }
-
-    #box4:hover {
-        background-color: rgb(41, 41, 41);
-        cursor: pointer;
-    }
 }
 
+#box1{
+    background-color: rgb(125, 109, 87);
+}
+
+#box1:hover {
+    background-color: rgb(104, 91, 73);
+    cursor: pointer;
+}
+
+#box2 {
+    background-color: var.$bg-color-2;
+}
+
+
+#box2:hover {
+    background-color: #874834;
+    cursor: pointer;
+}
+
+#box3 {
+    background-color: var.$pop-color;
+}
+
+#box3:hover {
+    background-color: #9b674a;
+    cursor: pointer;
+}
+
+#box4 {
+    background-color: rgb(60, 60, 60);
+}
+
+#box4:hover {
+    background-color: rgb(41, 41, 41);
+    cursor: pointer;
+}
+
+
+/*MODAL!!*/
+
+#myBtn {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: -100px auto 0;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+    color: var.$black-color;
+
+    .button {
+        padding: 0.5em;
+        background-color: var.$bg-color-2;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1em;
+        border: none;
+        transition: ease 0.5s;
+        position: relative;
+        bottom: 0;
+        max-width: 150px;
+        width: 100%;
+        margin: 10px 5px;
+      }
+      
+      .button:hover {
+        cursor: pointer;
+        background-color: #8a4632;
+      }
+
+      .headingClose {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      h3 {
+        color: var.$black-color;
+        margin: 10px 10px 0;
+      }
+  }
+  
+  .fromto {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  input[type=checkbox] {
+    height: 1em;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 1em;
+  }
+  
+  input,
+  select {
+    margin-bottom: .5em;
+    height: 2em;
+    padding: 0.3em;
+    max-width: 18.5em;
+    width: 100%;
+  }
+
+  input[type=checkbox] {
+    max-width: 50px;
+  }
+
+  option,
+  select,
+  input,
+  textarea {
+    font-family: var.$standard-font;
+    font-size: 16px;
+  }
+  
+  .flexSpan {
+    display: flex;
+    flex-direction: row;
+    color: var.$black-color;
+    max-width: 27.5em;
+    font-size: 14px;
+    font-weight: 500;
+    
+    input {
+        margin-top: 13.5px;
+    }
+  }
+
+  #description {
+    height: 10em;
+  }
+  
+  .errorMsg {
+    font-size: 0.7em;
+    color: red;
+    font-weight: 600;
+    line-height: 0;
+    margin: -5px 0 15px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /*Editera middagsmeny*/

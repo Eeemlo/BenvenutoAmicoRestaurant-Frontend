@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#signInForm");
     const usernameInput = document.querySelector("#username");
     const passwordInput = document.querySelector("#password");
-    const loginBtn = document.querySelector("#loginBtn");
     const loginError = document.querySelector("#loginError");
     
     // Eventlyssnare för att logga in användare
@@ -85,3 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Anropa funktionen för att hämta skyddad data när sidan laddas
     fetchData();
     });
+
+

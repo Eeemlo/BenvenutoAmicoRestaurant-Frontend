@@ -8,7 +8,7 @@
 
 
     <link rel="stylesheet" href="css/main.scss">
-    <script src="js/main.js" type="module"></script>
+    <script src="js/protectedRoutes.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,25 +19,39 @@
 
 <body>
     <header>
-        <a href="index.html">
-            <picture class="logo" id="noAnimation">
-                <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
-                <img src="images/rest_logo.png?width=150px" alt="Logotyp">
-            </picture>
-        </a>
+        <div id="adminHeader">
+            <a href="index.html">
+                <picture class="logo" id="noAnimation">
+                    <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
+                    <img src="images/rest_logo.png?width=150px" alt="Logotyp">
+                </picture>
+            </a>
+            <div id="logoutContainer">
+                <span>Inloggad som: </span>
+                <button class="button">Logga ut</button>
+            </div>
+        </div>
     </header>
     <main>
         <div class="adminPanel">
-        <div class="flexRow">
-            <div id="box1"><h3>Uppdatera lunchmeny</h3></div>
-            <div id="box2"><h3>Uppdatera middagsmeny</h3></div>
+            <div class="flexRow">
+                <div id="box1">
+                    <h3>Uppdatera lunchmeny</h3>
+                </div>
+                <div id="box2">
+                    <h3>Uppdatera middagsmeny</h3>
+                </div>
+            </div>
+            <div class="flexRow">
+                <div id="box3">
+                    <h3>Uppdatera take away-meny</h3>
+                </div>
+                <div id="box4">
+                    <h3>Hantera användare</h3>
+                </div>
+            </div>
         </div>
-        <div class="flexRow">
-            <div id="box3"><h3>Uppdatera take away-meny</h3></div>
-            <div id="box4"><h3>Hantera användare</h3></div>
-        </div>
-    </div>
-</main>
+    </main>
 </body>
 
 </html>
