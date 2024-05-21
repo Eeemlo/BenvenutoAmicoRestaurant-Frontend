@@ -21,20 +21,33 @@
 <body>
     <header>
         <a href="index.html">
-            <picture class="logo" id="noAnimation">
+            <picture class="logo">
                 <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
                 <img src="images/rest_logo.png?width=150px" alt="Logotyp">
             </picture>
         </a>
 
-        <nav id="noAnimation">
+        <nav class="navLarge noAnimation">
             <ul class="ulNav">
                 <li><a id="bookBtn"
                         href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
-                <li><a href="takeaway.html" class="active">Menyer</a></li>
+                <li><a href="dinner-menu.html" class="active">Menyer</a></li>
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
+
+        <button class="hamburger">
+            <div class="bar"></div>
+        </button>
+        <nav class="smallNav noAnimation">
+            <ul>
+                <li id="bookBtn"><a
+                    href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
+                <li><a href="dinner-menu.html">Menyer</a></li>
+                <li><a href="about.html">Om oss</a></li>
+            </ul>
+        </nav>
+
     </header>
     <main>
         <div class="menuHeader" id="noAnimation">
@@ -45,7 +58,6 @@
                 <li><a href="dinner-menu.html">Middag</a></li>
                 <li><a href="lunch-menu.html">Lunch</a></li>
                 <li><a href="takeaway.html" class="active">Avhämtning</a></li>
-                <li><a href="drinks-menu.html">Dryck</a></li>
             </ul>
         </div>
 
