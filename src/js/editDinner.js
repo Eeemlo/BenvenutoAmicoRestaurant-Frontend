@@ -86,12 +86,17 @@ function createDinnerElement(dinner) {
     const deleteBtn = dinnerElement.querySelector(".deleteBtn");
 
     updateBtn.addEventListener("click", () => openUpdateModal(dinner));
-    deleteBtn.addEventListener("click", () => deleteDinner(dinner._id, dinnerElement));
+    deleteBtn.addEventListener("click", () => deleteDinner(dinner._id, dinner.name, dinnerElement));
     return dinnerElement;
 }
 
 // Funktion för att radera middag från API
-async function deleteDinner(id, dinnerElement) {
+async function deleteDinner(id, name, dinnerElement) {
+    const isConfirmed = confirm(`Är du säker på att du vill radera ${name}?`);
+    if (!isConfirmed) {
+        return; // Avbryt raderingen om användaren inte bekräftar
+    };
+
     try {
         const response = await fetch(url + "/" + id, {
             method: "DELETE",

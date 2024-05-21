@@ -78,7 +78,7 @@ function iterateLunches(lunchData) {
 
         if (lunchDay) {
             lunchDay.innerHTML += `
-        <p>${lunch.description1} <br> ${lunch.description2}</p>
+        <p>${lunch.description1} <br> ${lunch.description2}</p> 
       `;
         }
       }

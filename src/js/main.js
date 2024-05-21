@@ -28,3 +28,15 @@ document.addEventListener("scroll", function (event) {
         }
     });
 });
+
+
+/*Toggla hamburgermeny*/
+
+window.onload = function () {
+    const menuBtn = document.querySelector(".hamburger");
+    const mobileMenu = document.querySelector(".smallNav")
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("is-active");
+        mobileMenu.classList.toggle("is-active");
+    })
+}
