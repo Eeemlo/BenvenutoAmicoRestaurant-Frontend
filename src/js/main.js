@@ -1,7 +1,7 @@
 /*Eventlyssnare för animeringar*/
 /* Kod från: https://www.sliderrevolution.com/resources/css-animations-on-scroll/*/
 
-document.addEventListener("scroll", function (event) {
+document.addEventListener("scroll", function () {
     var animatables = document.querySelectorAll(".animate");
 
     animatables.forEach(function (animatable) {
@@ -16,7 +16,7 @@ document.addEventListener("scroll", function (event) {
 });
 
 
-document.addEventListener("scroll", function (event) {
+document.addEventListener("scroll", function () {
     var images = document.querySelectorAll(".image-animate");
 
     images.forEach(function (image) {

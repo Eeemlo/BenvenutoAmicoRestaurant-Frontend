@@ -14,6 +14,7 @@ body {
     font-family: var.$standard-font;
     letter-spacing: 1;
     color: var.$light-color;
+    overflow-x: hidden;
 }
 
 header {
@@ -104,7 +105,7 @@ p {
     display: none;
 }
 
-#bookBtn {
+.bookBtn {
     color: black;
     background-color: var.$pop-color;
 }
@@ -535,6 +536,7 @@ footer {
 
 /*Animeringar*/
 
+
 /* Kod från: https://www.sliderrevolution.com/resources/css-animations-on-scroll/*/
 
 .animate {
@@ -765,7 +767,7 @@ form {
     margin-top: 0px;
     justify-content: center;
 
-    li {
+    .box {
         padding: 5px;
         height: 2em;
         margin: 3px;
@@ -1433,7 +1435,7 @@ textarea {
     }
 
     .adminNav {
-        li {
+        .box {
             height: 4em;
         }
     }

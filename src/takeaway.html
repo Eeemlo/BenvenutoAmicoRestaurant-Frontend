@@ -21,28 +21,26 @@
 <body>
     <header>
         <a href="index.html">
-            <picture class="logo">
+            <picture class="logo noAnimation">
                 <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
                 <img src="images/rest_logo.png?width=150px" alt="Logotyp">
             </picture>
         </a>
 
-        <nav class="navLarge noAnimation">
-            <ul class="ulNav">
-                <li><a id="bookBtn"
-                        href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
+        <nav class="navLarge">
+            <ul class="ulNav noAnimation">
+                <li><a class="bookBtn" href="book.html">Boka</a></li>
                 <li><a href="dinner-menu.html" class="active">Menyer</a></li>
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
 
         <button class="hamburger">
-            <div class="bar"></div>
+            <span class="bar"></span>
         </button>
         <nav class="smallNav noAnimation">
             <ul>
-                <li id="bookBtn"><a
-                    href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
+                <li class="bookBtn"><a href="book.html">Boka</a></li>
                 <li><a href="dinner-menu.html">Menyer</a></li>
                 <li><a href="about.html">Om oss</a></li>
             </ul>
@@ -95,9 +93,10 @@
             <div id="footerNav">
                 <h3>Länkar</h3>
                 <ul>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="book.html">Boka</a></li>
+                    <li><a href="dinner-menu.html">Menyer</a></li>
+                    <li><a href="about.html">Om oss</a></li>
                     <li><a href="login.html">Logga in</a></li>
-                    <li><a href=""></a></li>
                 </ul>
             </div>
 
