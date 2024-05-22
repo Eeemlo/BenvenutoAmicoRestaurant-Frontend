@@ -1,5 +1,5 @@
 /*URL till API*/
-let url = "http://localhost:3000/api";
+let url = "https://projekt-auth.onrender.com/api";
 
 /* **** KOD FÖR MIDDAGSMENY *****/
 /*Hämta menycontainrar*/

@@ -1,5 +1,5 @@
  /*URL till API*/
-let url = "http://localhost:3000/api";
+let url = "https://projekt-auth.onrender.com/api";
 
 // Funktion för att göra fetch-anrop till den skyddade routen med token i header
 async function fetchData() {

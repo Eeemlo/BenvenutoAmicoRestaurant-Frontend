@@ -1,4 +1,4 @@
-let url = "http://localhost:3000/api/bookings";
+let url = "https://projekt-auth.onrender.com/api/bookings";
 
 document.addEventListener("DOMContentLoaded", () => {
     getData(); // Hämta data när sidan laddats

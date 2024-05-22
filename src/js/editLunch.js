@@ -1,4 +1,4 @@
-let url = "http://localhost:3000/api/lunches";
+let url = "https://projekt-auth.onrender.com/api/lunches";
 let isUpdating = false;
 let currentLunchId = null;
 

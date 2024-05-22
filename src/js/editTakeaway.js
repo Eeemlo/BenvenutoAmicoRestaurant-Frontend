@@ -1,4 +1,4 @@
-let url = "http://localhost:3000/api/takeaways";
+let url = "https://projekt-auth.onrender.com/api/takeaways";
 let isUpdating = false;
 let currentTakeawayId = null;
 
