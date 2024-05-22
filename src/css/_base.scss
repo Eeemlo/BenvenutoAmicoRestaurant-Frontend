@@ -748,7 +748,7 @@ form {
 
     button {
         max-width: 140px;
-        margin-top: 20px;
+        margin-top: 40px;
     }
 }
 
@@ -767,10 +767,12 @@ form {
 
     li {
         padding: 5px;
+        height: 2em;
         margin: 3px;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
 }
 
@@ -1098,6 +1100,29 @@ textarea {
 
 }
 
+/*BORDSBOKNINGAR*/
+.bookingElement {
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid var.$bg-color-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+
+    .deleteBtn {
+        cursor: pointer;
+        width: 6em;
+        border: none;
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        background-color: rgb(212, 0, 0);
+        height: 2.14em;
+    }
+}
+
 
 
 @media screen and (max-width: 1150px) {
@@ -1222,7 +1247,7 @@ textarea {
         justify-content: center;
     }
 
-    /*BOKA*/
+    /*BORDSBOKNINGAR*/
 .bookingSection {
 
     h1 {
@@ -1404,6 +1429,12 @@ textarea {
             margin-left: 0px;
             font-size: 1.6em;
             animation: fadeInSkew 1.5s 1.5s both running;
+        }
+    }
+
+    .adminNav {
+        li {
+            height: 4em;
         }
     }
 }

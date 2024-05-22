@@ -41,6 +41,8 @@ async function handleSubmit() {
         console.error("Error creating booking:", error);
     }
 
+    alert(`Du har bokat ett bord för ${quantityInput.value} personer`)
+
     // Återställ formulärfält
     const inputs = [fullNameInput, emailInput, quantityInput, dateTimeInput];
     inputs.forEach(input => input.value = "");

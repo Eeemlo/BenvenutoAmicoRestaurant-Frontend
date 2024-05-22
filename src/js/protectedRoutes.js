@@ -19,3 +19,19 @@
         updateUserBtn.addEventListener("click", () => {
             window.location.href = "/admin-bookings.html"; //Omdirigera användaren till skyddad route
         });
+
+        //Logga ut användare
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Hämta knappen för utloggning
+            const logoutBtn = document.querySelector(".logoutBtn");
+            
+            // Lägg till en händelselyssnare för utloggning
+            logoutBtn.addEventListener("click", () => {
+                // Ta bort token från localStorage
+                localStorage.removeItem("token");
+            
+                //Omdirigera till startsidan
+                window.location.href = "index.html";
+            });
+        });
