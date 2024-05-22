@@ -31,3 +31,4 @@ async function fetchData() {
 
 // Anropa funktionen för att hämta skyddad data när sidan laddas
 fetchData();
+ 

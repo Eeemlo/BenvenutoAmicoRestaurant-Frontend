@@ -1,28 +1,7 @@
-let url = "http://localhost:3000/api/lunches";
-let isUpdating = false;
-let currentLunchId = null;
+let url = "http://localhost:3000/api/bookings";
 
-// Hämta formulärfältens element
-const weekInput = document.querySelector("#week");
-const weekdayInput = document.querySelector("#weekday");
-const description1 = document.querySelector("#description1");
-const description2 = document.querySelector("#description2");
-const submitBtn = document.querySelector("#submitBtn");
-const modal = document.querySelector("#myModal");
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector(".form");
-
-    // Eventlyssnare för form submit
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (isUpdating) {
-            handleUpdate(currentLunchId);
-        } else {
-            handleSubmit();
-        }
-    });
-
     getData(); // Hämta data när sidan laddats
 });
 
@@ -41,8 +20,8 @@ async function getData() {
 // Funktion för att skriva ut data till DOM
 function iterateData(data) {
     console.log("Iterating over data:", data);
-    const lunchListContainer = document.querySelector(".lunchListContainer");
-    lunchListContainer.innerHTML = ''; // Töm containern för att undvika dubletter
+    const tableBookingsContainer = document.querySelector(".tableBookingsContainer");
+    tableBookingsContainer.innerHTML = ''; // Töm containern för att undvika dubletter
 
     const groupedData = groupByWeek(data);
 

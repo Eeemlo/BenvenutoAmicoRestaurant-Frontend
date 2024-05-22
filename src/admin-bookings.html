@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benvenuto Amico Trattoria</title>
+    <title>Adminpanel - Benvenuto Amico Trattoria</title>
 
 
     <link rel="stylesheet" href="css/main.scss">
     <script src="js/protectedRoutes.js" type="module"></script>
+    <script src="js/editBookings.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +27,7 @@
                     <img src="images/rest_logo.png?width=150px" alt="Logotyp">
                 </picture>
             </a>
+
             <div id="logoutContainer">
                 <span>Inloggad som: </span>
                 <button class="button">Logga ut</button>
@@ -33,24 +35,26 @@
         </div>
     </header>
     <main>
-        <div class="adminPanel">
-            <div class="flexRow">
-                <div id="box1">
-                    <h3>Uppdatera lunchmeny</h3>
-                </div>
-                <div id="box2">
-                    <h3>Uppdatera middagsmeny</h3>
-                </div>
+        <nav class="noAnimation">
+            <ul class="adminNav noAnimation">
+                <span>
+                    <li id="box1">Uppdatera lunchmeny</li>
+                    <li id="box2"> Uppdatera middagsmeny</li>
+                </span><span>
+                    <li id="box3">Uppdatera TakeAway</li>
+                    <li id="box4">Bordsbokningar</li>
+                </span>
+            </ul>
+        </nav>
+
+        <h2 class="h2Admin">Aktuella bordsbokningar</h2>
+
+        <!--Utskrift av bordsbokningarfrån API-->
+        <div class="tableBookingsContainer">
             </div>
-            <div class="flexRow">
-                <div id="box3">
-                    <h3>Uppdatera take away-meny</h3>
-                </div>
-                <div id="box4">
-                    <h3>Bordsbokningar</h3>
-                </div>
-            </div>
+
         </div>
+
     </main>
 </body>
 

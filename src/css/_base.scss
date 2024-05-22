@@ -47,12 +47,18 @@ p {
 }
 
 .logo {
-    margin: 20px 5px 5px 30px;
-    top: 20;
+    margin: 25px 5px 5px 30px;
+    top: 0;
     position: relative;
+    display: block;
     left: -700px;
     opacity: 0;
     animation: slideInLeft 1s both running;
+}
+
+.logo img,
+.logo source {
+    max-width: 130px;
 }
 
 .navLarge {
@@ -66,7 +72,7 @@ p {
 .ulNav {
     right: 0;
     list-style-type: none;
-    margin-top: -80px;
+    margin-top: -90px;
     position: fixed;
     z-index: 10;
 
@@ -166,7 +172,7 @@ p {
     margin-bottom: 50px;
 }
 
-#menuText {
+.menuText {
     margin: 150px auto 0;
     max-width: 1400px;
     width: 80%;
@@ -327,6 +333,12 @@ footer {
     .contacts {
         margin-top: 20px;
     }
+
+    .footerLogo {
+        position: relative;
+        top: 20;
+        margin: 50px 5px 25px 25px;
+    }
 }
 
 /*MENYSIDOR*/
@@ -334,7 +346,7 @@ footer {
 .menuHeader {
     max-width: 1400px;
     width: 93%;
-    margin: 0 auto;
+    margin: -140px auto 0;
     position: relative;
     left: -1500px;
     opacity: 0;
@@ -351,17 +363,18 @@ footer {
     font-family: var.$standard-font;
     padding-bottom: 25px;
     border-bottom: 2px solid var.$pop-color;
-    margin: -110px 5px 3.5%;
     max-width: 900px;
     width: 100%;
+    position: relative; /* Behövs för att absolut positionering inom denna fungerar korrekt */
 }
 
 .menuNav {
     @extend .ulNav;
-    position: relative;
+    position: absolute;
+    bottom: -55; /* Sätter den längst ned */
+    left: 0px; /* Anpassa vid behov */
     display: flex;
-    margin-top: -68px;
-    margin-left: 5px;
+    margin-top: 200px; /* Nollställ tidigare margin-top */
 
     a {
         border: none;
@@ -480,8 +493,43 @@ footer {
     h1 {
         max-width: 20em;
         margin-left: 0px;
-        font-size: 2.6em;
+        font-size: 3.4em;
         animation: fadeInSkew 1.5s 1.5s both running;
+    }
+}
+
+.aboutText {
+    @extend .menuText;
+    display: flex;
+    max-width: 1400px;
+    width: 80%;
+
+    .aboutImg {
+        margin: 0 10px;
+    }
+
+    #aboutImgRight {
+        margin-right: 25px;
+    }
+}
+
+/*BOKA*/
+.bookingSection {
+    margin-top: -100px;
+    padding: 0 0 60px;
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        animation: fadeInSkew 1s .5s both running;
+    }
+
+    #bookForm {
+        animation: fadeIn 1s 1.5s both running;
     }
 }
 
@@ -521,6 +569,11 @@ footer {
 }
 
 @media screen and (max-width: 1250px) {
+/*BOKA*/
+.bookingSection {
+    margin-top: 100px;
+}
+
     .navLarge {
         display: none;
     }
@@ -629,146 +682,11 @@ footer {
     }
 
     #menuHeading {
-        margin: 20px 5px 3.5%;
+        margin: 140px 0 0;
     }
 }
 
-@media screen and (max-width: 1150px) {
-    #headerVideo {
-        width: 90%;
-    }
 
-    #introText,
-    #welcomeText,
-    #menuText,
-    #hoursContainer,
-    #igContainer,
-    footer .logoLinks,
-    .menuHeader {
-        max-width: 1400px;
-        width: 90%;
-    }
-
-    #introText {
-        margin-top: -70px;
-    }
-
-    #introText h1 {
-        margin-left: 60px;
-    }
-
-    #menuImg img,
-    #menuimg source {
-        max-width: 450px;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 980px) {
-    #hoursContainer {
-        #openingHrs {
-            .openingBox {
-                padding: 10px 30px;
-            }
-        }
-    }
-
-    #welcomeText {
-        margin: 150px auto 10%;
-    }
-}
-
-@media screen and (max-width: 880px) {
-    h1 {
-        font-size: 34px;
-        margin-bottom: 50px;
-    }
-
-    #welcomeText p {
-        font-size: 24px;
-    }
-}
-
-@media screen and (max-width: 780px) {
-    #menuImg source,
-    #menuImg img {
-        transform: rotate(270deg);
-        max-width: 200px;
-        width: 100%;
-        margin-left: 30px;
-    }
-
-    #hoursContainer {
-        #openingHrs {
-            flex-direction: column;
-            .openingBox {
-                margin-bottom: 15px;
-            }
-        }
-    }
-
-    #book {
-        margin: -30px auto 100px;
-        height: 10em;
-        width: 17em;
-    
-        #bookText {
-            letter-spacing: 10px;
-            font-size: 120px;
-            stroke-width: 2;
-            margin: 0;
-        }
-    }
-}
-
-@media screen and (max-width: 680px) {
-    footer {
-        padding-top: 40px;
-        
-        .logoLinks {
-        flex-direction: column;
-        justify-content: center;
-        align-items:flex-start;
-    }
-
-    #footerNav,
-    .contacts {
-        margin-left: 50px;
-        margin-bottom: 15px;
-    }
-}
-
-#introText {
-    margin-top: -30px;
-}
-
-#introText h1 {
-    margin-left: 10px;
-}
-}
-
-@media screen and (max-width: 550px) {
-    #welcomeText #quote {
-        font-size: 10px;
-    }
-
-    #welcomeText p {
-        font-size: 20px;
-    }
-
-    #menuImg source,
-    #menuImg img {
-        display: none;
-    }
-
-    #welcomeText {
-        margin: 90px auto 10%;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
-}
 
 /*ADMIN-GRÄNSSNITT!!!*/
 
@@ -834,11 +752,18 @@ form {
     }
 }
 
+.h2Admin {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
 .adminNav {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    margin-top: 60px;
+    margin-top: 0px;
+    justify-content: center;
 
     li {
         padding: 5px;
@@ -914,9 +839,9 @@ form {
 /*MODAL!!*/
 
 #myBtn {
-    max-width: 600px;
+    max-width: 200px;
     width: 100%;
-    margin: 0 auto;
+    margin: 35px auto 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1069,7 +994,7 @@ textarea {
     display: flex;
 
     div {
-        margin: 50px 20px;
+        margin: 20px;
     }
 
     p {
@@ -1090,5 +1015,395 @@ textarea {
         @extend .updateBtn;
         background-color: rgb(212, 0, 0);
         height: 2.14em;
+    }
+}
+
+/*Editera lunchmeny*/
+.lunchListContainer {
+    margin: 10px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+    .weekContainer {
+        border-bottom: 2px solid var.$bg-color-2;
+        margin-bottom: 30px;
+    }
+
+    .lunchDay {
+        margin: 20px 0;
+
+
+        p {
+            line-height: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        .updateBtn {
+            cursor: pointer;
+            background-color: rgb(255, 217, 0);
+            height: 2em;
+            width: 6em;
+            border: none;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+    
+        .deleteBtn {
+            @extend .updateBtn;
+            background-color: rgb(212, 0, 0);
+            height: 2.14em;
+        }
+    }
+
+}
+
+/*Editera takeawaymeny*/
+.takeawayListContainer {
+    margin: 10px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+
+    h3 {
+        margin-bottom: 20px;
+    }
+
+    #editTakeawayDinner,
+    #editTakeawaySnacks {
+        margin-bottom: 30px;
+    }
+
+    #editTakeawayDinner {
+        margin-right: 15px;
+    }
+
+    .updateBtn {
+        cursor: pointer;
+        background-color: rgb(255, 217, 0);
+        height: 2em;
+        width: 6em;
+        border: none;
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .deleteBtn {
+        @extend .updateBtn;
+        background-color: rgb(212, 0, 0);
+        height: 2.14em;
+    }
+
+}
+
+
+
+@media screen and (max-width: 1150px) {
+    #headerVideo {
+        width: 90%;
+    }
+
+    #introText,
+    #welcomeText,
+    #menuText,
+    #hoursContainer,
+    #igContainer,
+    footer .logoLinks,
+    .menuHeader,
+    .aboutText {
+        max-width: 1400px;
+        width: 90%;
+    }
+
+    #introText {
+        margin-top: -70px;
+    }
+
+    #introText h1 {
+        margin-left: 60px;
+    }
+
+    #menuImg img,
+    #menuimg source {
+        max-width: 450px;
+        width: 100%;
+    }
+
+    #aboutIntro {
+        margin-top: 100px;
+        margin-bottom: 300px;
+
+        h1 {
+            max-width: 20em;
+            margin-left: 0px;
+            font-size: 3.4em;
+            animation: fadeInSkew 1.5s 1.5s both running;
+        }
+    }
+
+    #logoutContainer {
+        justify-content: flex-end;
+        margin-right: -60px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .aboutText {
+        .aboutImg source,
+        .aboutImg img {
+            max-width: 450px;
+            width: 100%;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 980px) {
+    #hoursContainer {
+        #openingHrs {
+            .openingBox {
+                padding: 10px 30px;
+            }
+        }
+    }
+
+    #welcomeText {
+        margin: 150px auto 10%;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    h1 {
+        font-size: 34px;
+        margin-bottom: 50px;
+    }
+
+    #welcomeText p {
+        font-size: 24px;
+    }
+
+    .logo {
+        margin: 25px 5px 5px 0px;
+    }
+    
+    .logo img,
+    .logo source {
+        max-width: 110px;
+    }
+
+    .menuHeader {
+        margin: -140px 15px 0;
+        position: relative;
+    }
+
+    .dinnerListContainer {
+        flex-direction: column;
+
+        div {
+            margin: 20px 5px;
+        }
+    }
+
+    #editPreCourse,
+    #editDessert {
+        margin-top: 70px;
+    }
+
+    .takeawayListContainer {
+        margin: 10px;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 10px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /*BOKA*/
+.bookingSection {
+
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+}
+
+@media screen and (max-width: 780px) {
+    #menuImg source,
+    #menuImg img {
+        transform: rotate(270deg);
+        max-width: 200px;
+        width: 100%;
+        margin-left: 30px;
+    }
+
+    #hoursContainer {
+        #openingHrs {
+            flex-direction: column;
+            .openingBox {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    #book {
+        margin: -30px auto 100px;
+        height: 10em;
+        width: 17em;
+
+        #bookText {
+            letter-spacing: 10px;
+            font-size: 120px;
+            stroke-width: 2;
+            margin: 0;
+        }
+    }
+
+    #aboutIntro h1 {
+        margin-bottom: -100px;
+    }
+
+    .aboutText {
+        flex-direction: column;
+        margin-top: 100px;
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .aboutImg source,
+        .aboutImg img {
+            max-width: 200px;
+            width: 100%;
+            margin: 0 0;
+        }
+
+        .aboutTextLeft {
+            align-self: flex-start;
+        }
+
+        .aboutImgLeft {
+            align-self: flex-start;
+            margin-top: 20px;
+        }
+
+        #aboutImgRight {
+            display: none;
+        }
+
+        .aboutTextRight {
+            align-self: flex-end;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    footer {
+        padding-top: 40px;
+
+        .logoLinks {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        #footerNav,
+        .contacts {
+            margin-left: 50px;
+            margin-bottom: 15px;
+        }
+    }
+
+    #introText {
+        margin-top: -30px;
+    }
+
+    #introText h1 {
+        margin-left: 10px;
+    }
+
+    #aboutIntro {
+        margin-top: 100px;
+        margin-bottom: 300px;
+
+        h1 {
+            max-width: 20em;
+            margin-left: 0px;
+            font-size: 2.4em;
+            animation: fadeInSkew 1.5s 1.5s both running;
+        }
+    }
+
+    .flexRow {
+        flex-direction: column;
+        padding: 0 10px;
+    
+        div {
+            margin: 10px 20px;
+            font-size: 14px;
+        }
+    }
+
+
+    
+}
+
+@media screen and (max-width: 550px) {
+    #welcomeText #quote {
+        font-size: 10px;
+    }
+
+    #welcomeText p {
+        font-size: 20px;
+    }
+
+    #menuImg source,
+    #menuImg img {
+        display: none;
+    }
+
+    #welcomeText {
+        margin: 90px auto 10%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .logo img,
+    .logo source {
+        max-width: 80px;
+    }
+}
+
+@media screen and (max-width: 457.5px) {
+    .menuNav {
+        a {
+            padding: 0.5em 0.5em;
+        }
+
+        a:hover {
+            padding: 0.5em 0.5em;
+        }
+
+        .active {
+            padding: 0.5em 0.5em;
+        }
+    }
+
+    #aboutIntro {
+        margin-top: 100px;
+        margin-bottom: 300px;
+
+        h1 {
+            max-width: 20em;
+            margin-left: 0px;
+            font-size: 1.6em;
+            animation: fadeInSkew 1.5s 1.5s both running;
+        }
     }
 }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto Amico Trattoria</title>
+
+
+    <link rel="stylesheet" href="css/main.scss">
+    <script src="js/main.js" type="module"></script>
+    <script src="js/book.js" type="module"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nothing+You+Could+Do&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <picture class="logo">
+                <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
+                <img src="images/rest_logo.png?width=150px" alt="Logotyp">
+            </picture>
+        </a>
+
+        <nav class="navLarge noAnimation">
+            <ul class="ulNav">
+                <li><a class="active" id="bookBtn"
+                        href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
+                <li><a href="dinner-menu.html">Menyer</a></li>
+                <li><a href="about.html">Om oss</a></li>
+            </ul>
+        </nav>
+
+        <button class="hamburger">
+            <div class="bar"></div>
+        </button>
+        <nav class="smallNav noAnimation">
+            <ul>
+                <li id="bookBtn"><a
+                    href="https://app.bokabord.se/reservation/?hash=52e49c736747e60e9648d01db24ba177">Boka</a></li>
+                <li><a href="dinner-menu.html">Menyer</a></li>
+                <li><a href="about.html">Om oss</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <div class="bookingSection">
+            <div id="bookingIntro" class="">
+                <h1>Bordsbokning</h1>
+            </div>
+
+            <form id="bookForm" class="form" method="post">
+                <label for="fullname">För- och efternamn</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <span id="nameError" class="errorMsg"></span>
+                <label for="email">E-post</label>
+                <input type="text" id="email" name="email" required>
+                <span id="emailError" class="errorMsg"></span>
+                <label for="quantity">Antal personer</label>
+                <select name="quantity" id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <span id="quantityError" class="errorMsg"></span>
+                <label for="time">Datum och tid</label>
+                <input type="datetime-local" name="time" id="time">
+                <span id="timeError" class="errorMsg"></span>
+                <input type="submit" class="button" value="Boka">
+            </form>
+
+            <div id="hoursContainer">
+                <h1 class="animate fadeInUp">Öppettider</h1>
+                <div id="openingHrs" class="animate fadeInUp">
+    
+                    <div class="openingBox">
+                        <p>Måndag - Torsdag</p><br>
+                        <p>Lunch: 11.30 - 14.30</p>
+                        <p>Middag: 17.00 - 23.00</p>
+                    </div>
+                    <div class="openingBox">
+                        <p>Fredag</p><br>
+                        <p>Lunch: 11.30 - 14.30</p>
+                        <p>Middag: 17.00 - sent</p>
+                    </div>
+                    <div class="openingBox">
+                        <p>Lördag</p><br>
+                        <p>Middag: 17.00 - sent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="logoLinks">
+            <div id="logocontainer">
+                <picture class="footerLogo">
+                    <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
+                    <img src="images/rest_logo.png?width=150px" alt="Logotyp">
+                </picture>
+            </div>
+
+            <div id="footerNav">
+                <h3>Länkar</h3>
+                <ul>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="login.html">Logga in</a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+
+            <div class="contacts">
+                <h3>Kontaktuppgifter</h3>
+                <p>Telefon: 0300 - 133 20</p>
+                <p>E-post: info@benvenutoamico.se</p>
+                <p>Adress: Lindekullegatan 15, Alingsås</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

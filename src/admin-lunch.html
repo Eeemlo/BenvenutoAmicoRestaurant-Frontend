@@ -29,15 +29,6 @@
                 </picture>
             </a>
 
-            <nav class="noAnimation">
-                <ul class="adminNav noAnimation">
-                    <li id="box1">Uppdatera lunchmeny</li>
-                    <li id="box2"> Uppdatera middagsmeny</li>
-                    <li id="box3">Uppdatera TakeAway</li>
-                    <li id="box4">Hantera användare</li>
-                </ul>
-            </nav>
-
             <div id="logoutContainer">
                 <span>Inloggad som: </span>
                 <button class="button">Logga ut</button>
@@ -45,6 +36,19 @@
         </div>
     </header>
     <main>
+        <nav class="noAnimation">
+            <ul class="adminNav noAnimation">
+                <span>
+                <li id="box1">Uppdatera lunchmeny</li>
+                <li id="box2"> Uppdatera middagsmeny</li>
+            </span><span>
+                <li id="box3">Uppdatera TakeAway</li>
+                <li id="box4">Bordsbokningar</li>
+            </span>
+            </ul>
+        </nav>
+
+        <h2 class="h2Admin">Uppdatera lunchmeny</h2>
         <!--POPUP FÖR ATT LÄGGA TILL KURS-->
         <!-- Knapp för att öppna popup -->
         <button id="myBtn" class="button">Lägg till ny</button>
@@ -121,7 +125,7 @@
                         <option value="Tisdag">Tisdag</option>
                         <option value="Onsdag">Onsdag</option>
                         <option value="Torsdag">Torsdag</option>
-                        <option value="Torsdag">Fredag</option>
+                        <option value="Fredag">Fredag</option>
                     </select>
                     <label for="description1">Dagens kött eller pasta:</label>
                     <textarea id="description1" name="description1"></textarea>

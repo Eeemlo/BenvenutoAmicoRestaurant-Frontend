@@ -29,14 +29,7 @@
                 </picture>
             </a>
 
-            <nav class="noAnimation">
-                <ul class="adminNav noAnimation">
-                    <li id="box1">Uppdatera lunchmeny</li>
-                    <li id="box2"> Uppdatera middagsmeny</li>
-                    <li id="box3">Uppdatera TakeAway</li>
-                    <li id="box4">Hantera användare</li>
-                </ul>
-            </nav>
+    
 
             <div id="logoutContainer">
                 <span>Inloggad som: </span>
@@ -45,6 +38,20 @@
         </div>
     </header>
     <main>
+        <nav class="noAnimation">
+            <ul class="adminNav noAnimation">
+                <span>
+                <li id="box1">Uppdatera lunchmeny</li>
+                <li id="box2"> Uppdatera middagsmeny</li>
+            </span><span>
+                <li id="box3">Uppdatera TakeAway</li>
+                <li id="box4">Bordsbokningar</li>
+            </span>
+            </ul>
+        </nav>
+
+        <h2 class="h2Admin">Uppdatera middagsmeny</h2>
+
         <!--POPUP FÖR ATT LÄGGA TILL KURS-->
         <!-- Knapp för att öppna popup -->
         <button id="myBtn" class="button">Lägg till ny</button>
@@ -91,21 +98,23 @@
         <!--Utskrift av middagar från API-->
         <div class="dinnerListContainer">
             <div>
-            <div id="editSmallCourse" class="editMenuContainer">
-                <h3>Smått</h3>
-            </div>
-            <div id="editMainCourse" class="editMenuContainer">
-                <h3>Huvudrätter</h3>
-            </div>
-    
-        </div><div>
+                <div id="editSmallCourse" class="editMenuContainer">
+                    <h3>Smått</h3>
+                </div>
+
+           
             <div id="editPreCourse" class="editMenuContainer">
                 <h3>Förrätter</h3>
             </div>
-            <div id="editDessert" class="editMenuContainer">
-                <h3>Efterrätter</h3>
             </div>
-        </div>
+            <div>
+                <div id="editMainCourse" class="editMenuContainer">
+                    <h3>Huvudrätter</h3>
+                </div>
+                <div id="editDessert" class="editMenuContainer">
+                    <h3>Efterrätter</h3>
+                </div>
+            </div>
         </div>
 
     </main>

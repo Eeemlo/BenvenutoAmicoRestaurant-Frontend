@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benvenuto Amico Trattoria</title>
+    <title>Adminpanel - Benvenuto Amico Trattoria</title>
 
 
     <link rel="stylesheet" href="css/main.scss">
-    <script src="js/main.js" type="module"></script>
+    <script src="js/protectedRoutes.js" type="module"></script>
+    <script src="js/modal.js" type="module"></script>
+    <script src="js/editTakeaway.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,25 +21,82 @@
 
 <body>
     <header>
-        <a href="index.html">
-            <picture class="logo" id="noAnimation">
-                <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
-                <img src="images/rest_logo.png?width=150px" alt="Logotyp">
-            </picture>
-        </a>
+        <div id="adminHeader">
+            <a href="index.html">
+                <picture class="logo" id="noAnimation">
+                    <source srcset="images/rest_logo.png?as=webp&width=150px" type="image/webp">
+                    <img src="images/rest_logo.png?width=150px" alt="Logotyp">
+                </picture>
+            </a>
+
+            <div id="logoutContainer">
+                <span>Inloggad som: </span>
+                <button class="button">Logga ut</button>
+            </div>
+        </div>
     </header>
     <main>
-        <div class="adminPanel">
-        <div class="flexRow">
-            <div id="box1"><h3>Hejghej</h3></div>
-            <div id="box2"><h3>fdhsdf</h3></div>
+        <nav class="noAnimation">
+            <ul class="adminNav noAnimation">
+                <span>
+                    <li id="box1">Uppdatera lunchmeny</li>
+                    <li id="box2"> Uppdatera middagsmeny</li>
+                </span><span>
+                    <li id="box3">Uppdatera TakeAway</li>
+                    <li id="box4">Bordsbokningar</li>
+                </span>
+            </ul>
+        </nav>
+
+        <h2 class="h2Admin">Uppdatera takeaway-meny</h2>
+        <!--POPUP FÖR ATT LÄGGA TILL KURS-->
+        <!-- Knapp för att öppna popup -->
+        <button id="myBtn" class="button">Lägg till ny</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="headingClose">
+                    <h3>Lägg till/redigera takeaway-meny:</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <form class="form" method="post">
+                    <label for="name">Namn på rätt:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="nameError" class="errorMsg"></span>
+                    <label for="category">Välj kategori:</label>
+                    <select name="category" id="category">
+                        <option value="Smått">Smått</option>
+                        <option value="Middag">Middag</option>
+                    </select>
+                    <span id="categoryError" class="errorMsg"></span>
+                    <label for="price">Ange pris i SEK:</label>
+                    <input type="number" id="price" name="price" required>
+                    <span id="priceError" class="errorMsg"></span>
+                    <label for="description">Ange beskrivning av rätt:</label>
+                    <textarea id="description" name="description"></textarea>
+                    <input type="submit" class="button" value="Spara">
+                </form>
+            </div>
         </div>
-        <div class="flexRow">
-            <div id="box3"><h3>fghs</h3></div>
-            <div id="box4"><h3>fshsh</h3></div>
+
+
+        <!--Utskrift av veckomenyer från API-->
+        <div class="takeawayListContainer">
+            <div id="editTakeawayDinner" class="editTakeawayContainer">
+                <h3>Huvudrätter</h3>
+            </div>
+
+
+            <div id="editTakeawaySnacks" class="editTakeawayContainer">
+                <h3>Annat gott att ta med:</h3>
+            </div>
+
         </div>
-    </div>
-</main>
-</body> 
+
+    </main>
+</body>
 
 </html>

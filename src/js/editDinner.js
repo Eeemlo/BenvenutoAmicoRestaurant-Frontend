@@ -74,10 +74,16 @@ function iterateData(data) {
 function createDinnerElement(dinner) {
     const dinnerElement = document.createElement("div");
     dinnerElement.classList.add("dinnerElement");
+
+    let descriptionHTML = '';
+    if (dinner.description !== null) {
+        descriptionHTML = `<p>${dinner.description}</p>`;
+    }
+
     dinnerElement.innerHTML = `
         <div>
             <h4>${dinner.name} ${dinner.price}:-</h4>
-            <p>${dinner.description}</p>
+            <p>${descriptionHTML}</p>
             <button class="updateBtn" data-id="${dinner._id}">Uppdatera</button>
             <button class="deleteBtn" data-id="${dinner._id}">Radera</button>
         </div>

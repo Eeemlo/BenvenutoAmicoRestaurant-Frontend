@@ -17,5 +17,5 @@
         });
 
         updateUserBtn.addEventListener("click", () => {
-            window.location.href = "/admin-user.html"; //Omdirigera användaren till skyddad route
+            window.location.href = "/admin-bookings.html"; //Omdirigera användaren till skyddad route
         });
