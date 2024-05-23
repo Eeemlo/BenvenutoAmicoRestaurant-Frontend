@@ -22,6 +22,10 @@ header {
     flex-direction: column;
 }
 
+main {
+    min-height: 65vh;
+}
+
 h1 {
     color: var.$pop-color;
     font-family: var.$pop-font;
@@ -196,6 +200,10 @@ p {
         margin-bottom: 50px;
         font-size: 2.5em;
     }
+}
+
+#menuImg {
+    opacity: 0;
 }
 
 .button {
@@ -395,6 +403,10 @@ footer {
         padding: 0.5em 1.8em;
         font-weight: 400;
     }
+}
+
+.aboutImg {
+    opacity: 0;
 }
 
 /*MIDDAGSMENY*/
@@ -1452,5 +1464,15 @@ textarea {
 
     #introText h1 {
         font-size: 2em;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    #aboutIntro {
+        margin-bottom: 600px;
+    }
+
+    #welcomeText {
+        margin-top: 300px;
     }
 }
