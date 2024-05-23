@@ -48,7 +48,7 @@ p {
 }
 
 .logo {
-    margin: 25px 5px 5px 30px;
+    margin: 35px 5px 5px 30px;
     top: 0;
     position: relative;
     display: block;
@@ -59,7 +59,7 @@ p {
 
 .logo img,
 .logo source {
-    max-width: 130px;
+    max-width: 10%;
 }
 
 .navLarge {
@@ -113,7 +113,7 @@ p {
 #headerVideo {
     max-width: 1700px;
     width: 70%;
-    margin-top: -120px;
+    margin-top: -130px;
     position: relative;
     left: -1900px;
     opacity: 0;
@@ -129,10 +129,10 @@ p {
 }
 
 #introText h1 {
-    max-width: 10em;
+    max-width: 13em;
     margin-left: 160px;
     font-style: italic;
-    font-size: 7vw;
+    font-size: 6em;
     animation: fadeInSkew 1.5s 1.5s both running;
 }
 
@@ -1150,6 +1150,7 @@ textarea {
 
     #introText h1 {
         margin-left: 60px;
+        font-size: 4em;
     }
 
     #menuImg img,
@@ -1326,6 +1327,10 @@ textarea {
             align-self: flex-end;
         }
     }
+
+    #introText h1 {
+        font-size: 3em;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -1351,6 +1356,7 @@ textarea {
 
     #introText h1 {
         margin-left: 10px;
+        font-size: 2.8em;
     }
 
     #aboutIntro {
@@ -1405,6 +1411,10 @@ textarea {
     .logo source {
         max-width: 80px;
     }
+
+    #introText h1 {
+        font-size: 2.5em;
+    }
 }
 
 @media screen and (max-width: 457.5px) {
@@ -1438,5 +1448,9 @@ textarea {
         .box {
             height: 4em;
         }
+    }
+
+    #introText h1 {
+        font-size: 2em;
     }
 }
