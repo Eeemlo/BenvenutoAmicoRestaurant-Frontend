@@ -45,18 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
             "Pris är obligatoriskt."
         );
       
-        submitBtn.disabled = !(
-            isNameValid &&
-            isCategoryValid &&
-            isPriceValid
-        );
+        return isNameValid && isCategoryValid && isPriceValid;
     }
 
-    form.addEventListener("input", validateForm);
-
-    // Eventlyssnare för form submit
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+
+        const isFormValid = validateForm();
+        if (!isFormValid) {
+            submitBtn.disabled = true;
+            return;
+        }
+
+        submitBtn.disabled = false;
+
         if (isUpdating) {
             handleUpdate(currentTakeawayId);
         } else {
@@ -64,9 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    getData(); // Hämta data när sidan laddats
+    form.addEventListener("input", () => {
+        submitBtn.disabled = !validateForm();
+    });
 
-    validateForm(); // Kör initial validering
+    getData(); // Hämta data när sidan laddats
 });
 
 
