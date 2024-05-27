@@ -31,30 +31,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function validateForm() {
-        const isWeekValid = validateField(weekInput, weekError, "Vecka är obligatorisk.");
-        const isWeekdayValid = validateField(weekdayInput, weekdayError, "Veckodag är obligatorisk.");
-        const isDescription1Valid = validateField(description1, description1Error, "Beskrivning 1 är obligatorisk.");
-        const isDescription2Valid = validateField(description2, description2Error, "Beskrivning 2 är obligatorisk.");
+        const isWeekValid = validateField(
+            weekInput,
+            weekError,
+            "Vecka är obligatorisk."
+        );
+        const isWeekdayValid = validateField(
+            weekdayInput,
+            weekdayError,
+            "Veckodag är obligatorisk."
+        );
+        const isDescription1Valid = validateField(
+            description1,
+            description1Error,
+            "Beskrivning 1 är obligatorisk."
+        );
+        const isDescription2Valid = validateField(
+            description2,
+            description2Error,
+            "Beskrivning 2 är obligatorisk."
+        );
 
-        submitBtn.disabled = !(isWeekValid && isWeekdayValid && isDescription1Valid && isDescription2Valid);
+        return (
+            isWeekValid &&
+            isWeekdayValid &&
+            isDescription1Valid &&
+            isDescription2Valid
+        );
     }
-
-    form.addEventListener("input", validateForm);
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        if (submitBtn.disabled) return;
 
-        if (isUpdating) {
-            handleUpdate(currentLunchId);
+        if (validateForm()) {
+            if (isUpdating) {
+                handleUpdate(currentLunchId);
+            } else {
+                handleSubmit();
+            }
         } else {
-            handleSubmit();
+            submitBtn.disabled = true;
         }
     });
 
-    getData(); // Hämta data när sidan laddats
+    function enableSubmitIfValid() {
+        submitBtn.disabled = !validateForm();
+    }
 
-    validateForm(); // Kör initial validering
+    form.addEventListener("input", enableSubmitIfValid);
+
+    getData(); // Hämta data när sidan laddats
 });
 
 // Funktion för att hämta data från API
@@ -73,7 +99,7 @@ async function getData() {
 function iterateData(data) {
     console.log("Iterating over data:", data);
     const lunchListContainer = document.querySelector(".lunchListContainer");
-    lunchListContainer.innerHTML = ''; // Töm containern för att undvika dubletter
+    lunchListContainer.innerHTML = ""; // Töm containern för att undvika dubletter
 
     const groupedData = groupByWeek(data);
 
@@ -109,7 +135,9 @@ function createLunchElement(lunch) {
     const deleteBtn = lunchElement.querySelector(".deleteBtn");
 
     updateBtn.addEventListener("click", () => openUpdateModal(lunch));
-    deleteBtn.addEventListener("click", () => deleteLunch(lunch._id, lunchElement));
+    deleteBtn.addEventListener("click", () =>
+        deleteLunch(lunch._id, lunchElement)
+    );
     return lunchElement;
 }
 
@@ -173,7 +201,7 @@ async function handleUpdate(id) {
         week: weekInput.value,
         weekday: weekdayInput.value,
         description1: description1.value,
-        description2: description2.value
+        description2: description2.value,
     };
 
     try {
@@ -197,7 +225,7 @@ async function handleUpdate(id) {
 
     // Återställ formulärfält
     const inputs = [weekInput, weekdayInput, description1, description2];
-    inputs.forEach(input => input.value = "");
+    inputs.forEach((input) => (input.value = ""));
     modal.style.display = "none";
 }
 
@@ -212,7 +240,7 @@ async function handleSubmit() {
         week: week,
         weekday: weekday,
         description1: descriptionOne,
-        description2: descriptionTwo
+        description2: descriptionTwo,
     };
 
     try {
@@ -232,14 +260,16 @@ async function handleSubmit() {
 
     // Återställ formulärfält
     const inputs = [weekInput, weekdayInput, description1, description2];
-    inputs.forEach(input => input.value = "");
+    inputs.forEach((input) => (input.value = ""));
     modal.style.display = "none";
 }
 
 // Funktion för att lägga till nytt lunchobjekt i DOM
 function addLunchToDOM(lunch) {
     const lunchListContainer = document.querySelector(".lunchListContainer");
-    let weekContainer = lunchListContainer.querySelector(`.weekContainer[data-week="${lunch.week}"]`);
+    let weekContainer = lunchListContainer.querySelector(
+        `.weekContainer[data-week="${lunch.week}"]`
+    );
     const lunchElement = createLunchElement(lunch);
     if (weekContainer) {
         weekContainer.appendChild(lunchElement);
