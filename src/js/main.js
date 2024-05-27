@@ -92,7 +92,7 @@ bookAnimation.addEventListener("click", () => {
 const menuBtn = document.querySelector("#menuBtn");
 
 if(menuBtn) {
-bookAnimation.addEventListener("click", () => {
+menuBtn.addEventListener("click", () => {
     window.location.href = "/dinner-menu.html";
 });
 }
