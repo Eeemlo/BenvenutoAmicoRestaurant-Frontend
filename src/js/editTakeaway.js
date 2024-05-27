@@ -57,9 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 handleSubmit();
             }
-        } else {
-            submitBtn.disabled = true;
-        }
+        } 
     });
 
     function enableSubmitIfValid() {
