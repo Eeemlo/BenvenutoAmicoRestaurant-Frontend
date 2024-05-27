@@ -140,11 +140,14 @@
                         <option value="Torsdag">Torsdag</option>
                         <option value="Fredag">Fredag</option>
                     </select>
+                    <span id="weekdayError" class="errorMsg"></span>
                     <label for="description1">Dagens kött eller pasta:</label>
                     <textarea id="description1" name="description1"></textarea>
+                    <span id="description1Error" class="errorMsg"></span>
                     <label for="description2">Dagens fisk:</label>
                     <textarea id="description2" name="description2"></textarea>
-                    <input type="submit" id="submitBtn" class="button" value="Spara">
+                    <span id="description2Error" class="errorMsg"></span>
+                    <input type="submit" id="submitBtn" class="button" value="Spara" disabled>
                 </form>
             </div>
         </div>

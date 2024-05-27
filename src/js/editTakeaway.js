@@ -2,8 +2,57 @@ let url = "https://projekt-auth.onrender.com/api/takeaways";
 let isUpdating = false;
 let currentTakeawayId = null;
 
+const takeawayNameInput = document.querySelector("#name");
+const takeawayCategory = document.querySelector("#category");
+const takeawayPrice = document.querySelector("#price");
+const descriptionInput = document.querySelector("#description");
+const modal = document.querySelector("#myModal");
+const submitBtn = document.querySelector("#submitBtn");
+const nameError = document.querySelector("#nameError");
+const categoryError = document.querySelector("#categoryError");
+const priceError = document.querySelector("#priceError");
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form");
+
+    
+    function validateField(field, errorElement, errorMessage) {
+        if (field.value.trim() === "") {
+            errorElement.textContent = errorMessage;
+            errorElement.style.display = "block";
+            return false;
+        } else {
+            errorElement.textContent = "";
+            errorElement.style.display = "none";
+            return true;
+        }
+    }
+
+    function validateForm() {
+        const isNameValid = validateField(
+            takeawayNameInput,
+            nameError,
+            "Namn på rätt är obligatoriskt."
+        );
+        const isCategoryValid = validateField(
+            takeawayCategory,
+            categoryError,
+            "Kategori är obligatoriskt."
+        );
+        const isPriceValid = validateField(
+            takeawayPrice,
+            priceError,
+            "Pris är obligatoriskt."
+        );
+      
+        submitBtn.disabled = !(
+            isNameValid &&
+            isCategoryValid &&
+            isPriceValid
+        );
+    }
+
+    form.addEventListener("input", validateForm);
 
     // Eventlyssnare för form submit
     form.addEventListener("submit", (event) => {
@@ -15,8 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    getData(); // Säkerställ att data hämtas när sidan laddas
+    getData(); // Hämta data när sidan laddats
+
+    validateForm(); // Kör initial validering
 });
+
+
 
 // Funktion för att hämta data från API
 async function getData() {
@@ -115,12 +168,6 @@ async function deleteTakeaway(id, name, takeawayElement) {
 
 // Funktion för att öppna modalen med befintliga värden
 function openUpdateModal(takeaway) {
-    const takeawayNameInput = document.querySelector("#name");
-    const takeawayCategory = document.querySelector("#category");
-    const takeawayPrice = document.querySelector("#price");
-    const descriptionInput = document.querySelector("#description");
-    const submitBtn = document.querySelector(".button");
-    const modal = document.querySelector("#myModal");
 
     takeawayNameInput.value = takeaway.name;
     takeawayCategory.value = takeaway.category;

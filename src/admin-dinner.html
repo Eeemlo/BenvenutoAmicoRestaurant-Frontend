@@ -82,6 +82,7 @@
                     <label for="name">Namn på rätt:</label>
                     <input type="text" id="name" name="name" required>
                     <span id="nameError" class="errorMsg"></span>
+
                     <label for="category">Välj kategori:</label>
                     <select name="category" id="category">
                         <option value="Smått">Smått</option>
@@ -90,9 +91,11 @@
                         <option value="Efterrätt">Efterrätt</option>
                     </select>
                     <span id="categoryError" class="errorMsg"></span>
+
                     <label for="price">Ange pris i SEK:</label>
                     <input type="number" id="price" name="price" required>
                     <span id="priceError" class="errorMsg"></span>
+
                     <span class="flexSpan">
                         <input type="checkbox" id="vegetarian" name="vegetarian">
                         <label for="vegetarian">Går att få vegetarisk?</label>
@@ -100,9 +103,11 @@
                         <input type="checkbox" id="vegan" name="vegan">
                         <label for="vegan">Går att få vegansk?</label>
                     </span>
+
                     <label for="description">Ange beskrivning av rätt:</label>
                     <textarea id="description" name="description"></textarea>
-                    <input type="submit" class="button" value="Spara">
+
+                    <input type="submit" class="button" value="Spara" disabled>
                 </form>
             </div>
         </div>

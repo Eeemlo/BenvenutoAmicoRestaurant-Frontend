@@ -10,12 +10,41 @@ const description2 = document.querySelector("#description2");
 const submitBtn = document.querySelector("#submitBtn");
 const modal = document.querySelector("#myModal");
 
+const weekError = document.querySelector("#weekError");
+const weekdayError = document.querySelector("#weekdayError");
+const description1Error = document.querySelector("#description1Error");
+const description2Error = document.querySelector("#description2Error");
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form");
 
-    // Eventlyssnare för form submit
+    function validateField(field, errorElement, errorMessage) {
+        if (field.value.trim() === "") {
+            errorElement.textContent = errorMessage;
+            errorElement.style.display = "block";
+            return false;
+        } else {
+            errorElement.textContent = "";
+            errorElement.style.display = "none";
+            return true;
+        }
+    }
+
+    function validateForm() {
+        const isWeekValid = validateField(weekInput, weekError, "Vecka är obligatorisk.");
+        const isWeekdayValid = validateField(weekdayInput, weekdayError, "Veckodag är obligatorisk.");
+        const isDescription1Valid = validateField(description1, description1Error, "Beskrivning 1 är obligatorisk.");
+        const isDescription2Valid = validateField(description2, description2Error, "Beskrivning 2 är obligatorisk.");
+
+        submitBtn.disabled = !(isWeekValid && isWeekdayValid && isDescription1Valid && isDescription2Valid);
+    }
+
+    form.addEventListener("input", validateForm);
+
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+        if (submitBtn.disabled) return;
+
         if (isUpdating) {
             handleUpdate(currentLunchId);
         } else {
@@ -24,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     getData(); // Hämta data när sidan laddats
+
+    validateForm(); // Kör initial validering
 });
 
 // Funktion för att hämta data från API

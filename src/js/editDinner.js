@@ -2,9 +2,59 @@ let url = "https://projekt-auth.onrender.com/api/dinners";
 let isUpdating = false;
 let currentDinnerId = null;
 
+const dinnerNameInput = document.querySelector("#name");
+const dinnerCategory = document.querySelector("#category");
+const dinnerPrice = document.querySelector("#price");
+const veganOption = document.querySelector("#vegan");
+const vegetarianOption = document.querySelector("#vegetarian");
+const descriptionInput = document.querySelector("#description");
+const modal = document.querySelector("#myModal");
+const submitBtn = document.querySelector("#submitBtn");
+const nameError = document.querySelector("#nameError");
+const categoryError = document.querySelector("#categoryError");
+const priceError = document.querySelector("#priceError");
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".form");
-    const submitBtn = document.querySelector(".button");
+
+
+    function validateField(field, errorElement, errorMessage) {
+        if (field.value.trim() === "") {
+            errorElement.textContent = errorMessage;
+            errorElement.style.display = "block";
+            return false;
+        } else {
+            errorElement.textContent = "";
+            errorElement.style.display = "none";
+            return true;
+        }
+    }
+
+    function validateForm() {
+        const isNameValid = validateField(
+            dinnerNameInput,
+            nameError,
+            "Namn på rätt är obligatoriskt."
+        );
+        const isCategoryValid = validateField(
+            dinnerCategory,
+            categoryError,
+            "Kategori är obligatoriskt."
+        );
+        const isPriceValid = validateField(
+            dinnerPrice,
+            priceError,
+            "Pris är obligatoriskt."
+        );
+      
+        submitBtn.disabled = !(
+            isNameValid &&
+            isCategoryValid &&
+            isPriceValid
+        );
+    }
+
+    form.addEventListener("input", validateForm);
 
     // Eventlyssnare för form submit
     form.addEventListener("submit", (event) => {
@@ -16,8 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    getData(); // Säkerställ att data hämtas när sidan laddas
+    getData(); // Hämta data när sidan laddats
+
+    validateForm(); // Kör initial validering
 });
+
 
 // Funktion för att hämta data från API
 async function getData() {
@@ -150,14 +203,6 @@ function openUpdateModal(dinner) {
 
 // Funktion för att hantera uppdatering av middag
 async function handleUpdate(id) {
-    const dinnerNameInput = document.querySelector("#name");
-    const dinnerCategory = document.querySelector("#category");
-    const dinnerPrice = document.querySelector("#price");
-    const veganOption = document.querySelector("#vegan");
-    const vegetarianOption = document.querySelector("#vegetarian");
-    const descriptionInput = document.querySelector("#description");
-    const submitBtn = document.querySelector(".button");
-    const modal = document.querySelector("#myModal");
 
     const updatedDinner = {
         name: dinnerNameInput.value,
