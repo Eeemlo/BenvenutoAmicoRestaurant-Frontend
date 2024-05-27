@@ -819,7 +819,7 @@ form {
 #logoutContainer {
     display: flex;
     flex-direction: column;
-    justify-content: last-baseline;
+    justify-content: flex-end;
     width: 220px;
 
     span {
