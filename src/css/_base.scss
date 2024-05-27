@@ -268,31 +268,31 @@ p {
     margin: 0 5px;
     color: var.$black-color;
     cursor: pointer;
-  
+
     source,
     .igImg {
-      position: relative;
-      margin-bottom: -7px;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+        position: relative;
+        margin-bottom: -7px;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-  
+
     .card-text {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
-      position: absolute;
-      background: #ffffff9e;
-      backdrop-filter: blur(5px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: .5s;
-      padding: 1em;
-      opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        position: absolute;
+        background: #ffffff9e;
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.5s;
+        padding: 1em;
+        opacity: 0;
     }
 
     .likesAndComments {
@@ -314,11 +314,11 @@ p {
         line-height: 1.2em;
         font-weight: 500;
     }
-  }
-  
-  .card:hover .card-text {
+}
+
+.card:hover .card-text {
     opacity: 1;
-  }
+}
 
 #hoursContainer {
     margin: 200px auto 0;
@@ -607,7 +607,7 @@ footer {
     align-items: center;
 
     h1 {
-        animation: fadeInSkew 1s .5s both running;
+        animation: fadeInSkew 1s 0.5s both running;
     }
 
     #bookForm {
@@ -616,7 +616,6 @@ footer {
 }
 
 /*Animeringar*/
-
 
 /* Kod från: https://www.sliderrevolution.com/resources/css-animations-on-scroll/*/
 
@@ -652,10 +651,10 @@ footer {
 }
 
 @media screen and (max-width: 1250px) {
-/*BOKA*/
-.bookingSection {
-    margin-top: 100px;
-}
+    /*BOKA*/
+    .bookingSection {
+        margin-top: 100px;
+    }
 
     .navLarge {
         display: none;
@@ -768,8 +767,6 @@ footer {
         margin: 140px 0 0;
     }
 }
-
-
 
 /*ADMIN-GRÄNSSNITT!!!*/
 
@@ -1123,7 +1120,6 @@ textarea {
     .lunchDay {
         margin: 20px 0;
 
-
         p {
             line-height: 1.4em;
             margin-bottom: 20px;
@@ -1138,14 +1134,13 @@ textarea {
             font-size: 13px;
             margin-bottom: 20px;
         }
-    
+
         .deleteBtn {
             @extend .updateBtn;
             background-color: rgb(212, 0, 0);
             height: 2.14em;
         }
     }
-
 }
 
 /*Editera takeawaymeny*/
@@ -1185,7 +1180,6 @@ textarea {
         background-color: rgb(212, 0, 0);
         height: 2.14em;
     }
-
 }
 
 /*BORDSBOKNINGAR*/
@@ -1210,8 +1204,6 @@ textarea {
         height: 2.14em;
     }
 }
-
-
 
 @media screen and (max-width: 1150px) {
     #headerVideo {
@@ -1272,8 +1264,6 @@ textarea {
             width: 100%;
         }
     }
-
-
 }
 
 @media screen and (max-width: 980px) {
@@ -1290,31 +1280,27 @@ textarea {
     }
 
     #igContainer {
-
         .igRow {
             flex-direction: column;
             height: fit-content;
         }
-    
+
         div {
             max-width: 1400px;
             width: 100%;
             height: 300px;
         }
-    
+
         .button {
             align-self: flex-end;
             margin-top: 360px;
         }
     }
-    
-      .card:hover .card-text {
+
+    .card:hover .card-text {
         opacity: 1;
-      }
-    
+    }
 }
-
-
 
 @media screen and (max-width: 880px) {
     h1 {
@@ -1329,7 +1315,7 @@ textarea {
     .logo {
         margin: 25px 5px 5px 0px;
     }
-    
+
     .logo img,
     .logo source {
         max-width: 110px;
@@ -1363,12 +1349,11 @@ textarea {
     }
 
     /*BORDSBOKNINGAR*/
-.bookingSection {
-
-    h1 {
-        margin-bottom: 20px;
+    .bookingSection {
+        h1 {
+            margin-bottom: 20px;
+        }
     }
-}
 }
 
 @media screen and (max-width: 780px) {
@@ -1486,15 +1471,12 @@ textarea {
     .flexRow {
         flex-direction: column;
         padding: 0 10px;
-    
+
         div {
             margin: 10px 20px;
             font-size: 14px;
         }
     }
-
-
-    
 }
 
 @media screen and (max-width: 550px) {
@@ -1529,13 +1511,12 @@ textarea {
     }
 
     #igContainer {
-    
         .ig {
             display: flex;
             flex-direction: column;
             max-width: 300px;
         }
-    
+
         .card {
             margin-bottom: 20px;
         }
@@ -1544,7 +1525,6 @@ textarea {
             margin-top: 1020px;
         }
     }
-
 }
 
 @media screen and (max-width: 457.5px) {
@@ -1594,4 +1574,3 @@ textarea {
         margin-top: 300px;
     }
 }
-
