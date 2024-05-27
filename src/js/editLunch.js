@@ -36,21 +36,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const isDescription1Valid = validateField(description1, description1Error, "Beskrivning 1 är obligatorisk.");
         const isDescription2Valid = validateField(description2, description2Error, "Beskrivning 2 är obligatorisk.");
 
-        submitBtn.disabled = !(isWeekValid && isWeekdayValid && isDescription1Valid && isDescription2Valid);
+        return isWeekValid && isWeekdayValid && isDescription1Valid && isDescription2Valid;
     }
-
-    form.addEventListener("input", validateForm);
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        validateForm();
-        if (submitBtn.disabled) return;
+
+        const isFormValid = validateForm();
+        if (!isFormValid) {
+            submitBtn.disabled = true;
+            return;
+        }
+
+        submitBtn.disabled = false;
 
         if (isUpdating) {
             handleUpdate(currentLunchId);
         } else {
             handleSubmit();
         }
+    });
+
+    form.addEventListener("input", () => {
+        submitBtn.disabled = !validateForm();
     });
 
     getData(); // Hämta data när sidan laddats
