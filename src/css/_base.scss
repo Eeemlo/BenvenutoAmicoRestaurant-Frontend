@@ -63,7 +63,7 @@ p {
 
 .logo img,
 .logo source {
-    max-width: 10%;
+    max-width: 200px;
 }
 
 .navLarge {
@@ -77,7 +77,7 @@ p {
 .ulNav {
     right: 0;
     list-style-type: none;
-    margin-top: -90px;
+    margin-top: -130px;
     position: fixed;
     z-index: 10;
 
@@ -859,6 +859,11 @@ form {
     }
 }
 
+.logo img,
+.logo source {
+    max-width: 200px;
+}
+
 .adminPanel {
     min-height: 80vh;
     display: flex;
@@ -1056,7 +1061,7 @@ textarea {
     color: red;
     font-weight: 600;
     line-height: 0;
-    margin: 10px 0;
+    margin: 8px 0 15px;
 }
 
 /* The Close Button */
