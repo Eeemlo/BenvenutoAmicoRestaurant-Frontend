@@ -47,30 +47,28 @@ document.addEventListener("DOMContentLoaded", () => {
             "Pris är obligatoriskt."
         );
       
-        return isNameValid && isCategoryValid && isPriceValid;
+        submitBtn.disabled = !(
+            isNameValid &&
+            isCategoryValid &&
+            isPriceValid
+        );
     }
 
+    form.addEventListener("input", validateForm);
+
+    // Eventlyssnare för form submit
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        
-        if (validateForm()) {
-            if (isUpdating) {
-                handleUpdate(currentDinnerId);
-            } else {
-                handleSubmit();
-            }
+        if (isUpdating) {
+            handleUpdate(currentDinnerId);
         } else {
-            submitBtn.disabled = true;
+            handleSubmit();
         }
     });
 
-    function enableSubmitIfValid() {
-        submitBtn.disabled = !validateForm();
-    }
-
-    form.addEventListener("input", enableSubmitIfValid);
-
     getData(); // Hämta data när sidan laddats
+
+    validateForm(); // Kör initial validering
 });
 
 
