@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <!--header för frontend-->
     <header>
         <a href="index.html">
             <picture class="logo">
@@ -27,7 +28,7 @@
                 <img src="images/rest_logo.png?width=250px" alt="Logotyp">
             </picture>
         </a>
-
+        <!--Navigering för stora skärmar-->
         <nav class="navLarge noAnimation">
             <ul class="ulNav">
                 <li><a class="active bookBtn" href="book.html">Boka</a></li>
@@ -36,6 +37,7 @@
             </ul>
         </nav>
 
+        <!--Navigering för små skrämar-->
         <button class="hamburger">
             <span class="bar"></span>
         </button>
@@ -50,11 +52,14 @@
 
     </header>
     <main>
+
+        <!--Sektion med formulär för att boka bord-->
         <div class="bookingSection">
             <div id="bookingIntro" class="">
                 <h1>Bordsbokning</h1>
             </div>
 
+            <!--Forumlär-->
             <form id="bookForm" class="form" method="post">
                 <label for="fullname">För- och efternamn</label>
                 <input type="text" id="fullname" name="fullname" required>
@@ -80,6 +85,7 @@
                 <input type="submit" class="button" value="Boka">
             </form>
 
+            <!--Sektion med öppettider-->
             <div id="hoursContainer">
                 <h1 class="animate fadeInUp">Öppettider</h1>
                 <div id="openingHrs" class="animate fadeInUp">
@@ -104,6 +110,7 @@
 
     </main>
 
+    <!--footer-->
     <footer>
         <div class="logoLinks">
             <div id="logocontainer">

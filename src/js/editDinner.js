@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Funktion för att validera formulärfält som är obligatoriska
     function validateForm() {
         const isNameValid = validateField(
             dinnerNameInput,

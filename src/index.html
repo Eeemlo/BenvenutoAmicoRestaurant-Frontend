@@ -19,6 +19,8 @@
 </head>
 
 <body>
+
+    <!--Header för frontend-->
     <header>
         <a href="index.html">
             <picture class="logo">
@@ -27,6 +29,7 @@
             </picture>
         </a>
 
+        <!--Navigering för stora skärmar-->
         <nav class="navLarge">
             <ul class="ulNav">
                 <li><a class="bookBtn" href="book.html">Boka</a></li>
@@ -34,6 +37,8 @@
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
+
+        <!--Navigering för små skärmar-->
         <button class="hamburger">
             <span class="bar"></span>
         </button>
@@ -45,6 +50,7 @@
             </ul>
         </nav>
 
+        <!--Headervideo-->
         <video autoplay muted loop playsinline id="headerVideo">
             <source src="images/background_mov.webm" type="video/webm">
             <source src="images/background_mov.mp4" type="video/mp4">
@@ -52,11 +58,13 @@
     </header>
     <main>
 
+        <!--Introducerande text-->
         <div id="introText">
             <h1>Italiensk elegans, serverad med kärlek och omtanke.
             </h1>
         </div>
 
+        <!--Citat från ägarna-->
         <div id="welcomeText">
             <div id="quote" class="animate fadeInUp">
                 <span>"</span>
@@ -67,6 +75,7 @@
             <p id="quoters" class="animate fadeInUp">- Frida & Linus, med personal</p>
         </div>
 
+        <!--Sektion som beskriver menyerna-->
         <div class="menuText">
             <div id="menuTextText">
                 <h1 class="animate fadeInUp">Menyer</h1>
@@ -74,9 +83,11 @@
                     läckra lunchalternativ som
                     lyfter
                     vardagen till härliga middagar som sätter guldkant på tillvaron.</p><br>
-                    <p class="animate fadeInUp">För de tillfällen då du vill njuta av vår mat i hemmets lugn har vi även ett utbud av goda
+                <p class="animate fadeInUp">För de tillfällen då du vill njuta av vår mat i hemmets lugn har vi även ett
+                    utbud av goda
                     takeaway-alternativ.</p><br>
-                    <p class="animate fadeInUp">Komplettera din måltid med något av våra noggrant utvalda viner. Upptäck våra menyer och låt oss ta
+                <p class="animate fadeInUp">Komplettera din måltid med något av våra noggrant utvalda viner. Upptäck
+                    våra menyer och låt oss ta
                     dig
                     med på en kulinarisk resa!</p>
                 <button id="menuBtn" class="button animate fadeInUp">Menyer</button>
@@ -87,126 +98,133 @@
             </picture>
         </div>
 
+        <!--Container för instagramflöde-->
         <div id="igContainer">
             <h1 class="animate fadeInUp">Senaste från Instagram</h1>
             <div class="ig">
                 <div class="igRow">
-                <!--Card 1-->
-                <div class="card animate fadeInUp">
-                    <picture>
-                        <source srcset="images/wine.jpg?as=webp&width=300px" type="image/webp">
-                        <img class="igImg" src="images/wine.jpg?width=300px" alt="Logotyp">
-                    </picture>
-                    <div class="card-text">
+                    <!--Card 1-->
+                    <div class="card animate fadeInUp">
+                        <picture>
+                            <source srcset="images/wine.jpg?as=webp&width=300px" type="image/webp">
+                            <img class="igImg" src="images/wine.jpg?width=300px" alt="Logotyp">
+                        </picture>
+                        <div class="card-text">
 
-                        <div class="likesAndComments">
-                            <div>
-                                <picture>
-                                    <img src="images/heart.png?width=30px" alt="likes">
-                                </picture>
-                                <span>113</span>
+                            <div class="likesAndComments">
+                                <div>
+                                    <picture>
+                                        <img src="images/heart.png?width=30px" alt="likes">
+                                    </picture>
+                                    <span>113</span>
+                                </div>
+                                <div>
+                                    <picture>
+                                        <img src="images/comment.png?width=30px" alt="comments">
+                                    </picture>
+                                    <span>2</span>
+                                </div>
                             </div>
-                            <div>
-                                <picture>
-                                    <img src="images/comment.png?width=30px" alt="comments">
-                                </picture>
-                                <span>2</span>
-                            </div>
+
+                            <p class="card-paragraph">Du har väl inte missat vår gedigna vinkällare? Här finner du både
+                                goda viner till maten och vällagrade viner till provningen!</p>
+
+
                         </div>
+                    </div>
 
-                        <p class="card-paragraph">Du har väl inte missat vår gedigna vinkällare? Här finner du både goda viner till maten och vällagrade viner till provningen!</p>
+                    <!--Card 2-->
+                    <div class="card animate fadeInUp">
+                        <picture>
+                            <source srcset="images/restaurant.jpg?as=webp&width=300px" type="image/webp">
+                            <img class="igImg" src="images/restaurant.jpg?width=300px" alt="Logotyp">
+                        </picture>
+                        <div class="card-text">
 
-                        
+                            <div class="likesAndComments">
+                                <div>
+                                    <picture>
+                                        <img src="images/heart.png?width=30px" alt="likes">
+                                    </picture>
+                                    <span>82</span>
+                                </div>
+                                <div>
+                                    <picture>
+                                        <img src="images/comment.png?width=30px" alt="comments">
+                                    </picture>
+                                    <span>1</span>
+                                </div>
+                            </div>
+
+                            <p class="card-paragraph">Vår fina matsal. Välkommen in och njut av en smakfull stund i
+                                lugnet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="igRow">
+                    <!--Card 3-->
+                    <div class="card animate fadeInUp">
+                        <picture>
+                            <source srcset="images/outside.jpg?as=webp&width=300px" type="image/webp">
+                            <img class="igImg" src="images/outside.jpg?width=300px" alt="Logotyp">
+                        </picture>
+                        <div class="card-text">
+
+                            <div class="likesAndComments">
+                                <div>
+                                    <picture>
+                                        <img src="images/heart.png?width=30px" alt="likes">
+                                    </picture>
+                                    <span>178</span>
+                                </div>
+                                <div>
+                                    <picture>
+                                        <img src="images/comment.png?width=30px" alt="comments">
+                                    </picture>
+                                    <span>5</span>
+                                </div>
+                            </div>
+
+                            <p class="card-paragraph">Äntligen visar sig vädret från sin bästa sida och sommaren är på
+                                ingång. På vår uteservering kan du både njuta av god mat och kall dryck.</p>
+                        </div>
+                    </div>
+
+                    <!--Card 4-->
+                    <div class="card animate fadeInUp">
+                        <picture>
+                            <source srcset="images/pasta.jpg?as=webp&width=300px" type="image/webp">
+                            <img class="igImg" src="images/pasta.jpg?width=300px" alt="Logotyp">
+                        </picture>
+                        <div class="card-text">
+
+                            <div class="likesAndComments">
+                                <div>
+                                    <picture>
+                                        <img src="images/heart.png?width=30px" alt="likes">
+                                    </picture>
+                                    <span>133</span>
+                                </div>
+                                <div>
+                                    <picture>
+                                        <img src="images/comment.png?width=30px" alt="comments">
+                                    </picture>
+                                    <span>6</span>
+                                </div>
+                            </div>
+
+                            <p class="card-paragraph">Linus har experimenterat med klassiska italienska pastarätter i
+                                köket. Resultatet? Magi!</p>
+                        </div>
                     </div>
                 </div>
 
-                <!--Card 2-->
-                <div class="card animate fadeInUp">
-                    <picture>
-                        <source srcset="images/restaurant.jpg?as=webp&width=300px" type="image/webp">
-                        <img class="igImg" src="images/restaurant.jpg?width=300px" alt="Logotyp">
-                    </picture>
-                    <div class="card-text">
-
-                        <div class="likesAndComments">
-                            <div>
-                                <picture>
-                                    <img src="images/heart.png?width=30px" alt="likes">
-                                </picture>
-                                <span>82</span>
-                            </div>
-                            <div>
-                                <picture>
-                                    <img src="images/comment.png?width=30px" alt="comments">
-                                </picture>
-                                <span>1</span>
-                            </div>
-                        </div>
-
-                        <p class="card-paragraph">Vår fina matsal. Välkommen in och njut av en smakfull stund i lugnet.</p>  
-                    </div>
-                </div>
-            </div> <div class="igRow">
-                <!--Card 3-->
-                <div class="card animate fadeInUp">
-                    <picture>
-                        <source srcset="images/outside.jpg?as=webp&width=300px" type="image/webp">
-                        <img class="igImg" src="images/outside.jpg?width=300px" alt="Logotyp">
-                    </picture>
-                    <div class="card-text">
-
-                        <div class="likesAndComments">
-                            <div>
-                                <picture>
-                                    <img src="images/heart.png?width=30px" alt="likes">
-                                </picture>
-                                <span>178</span>
-                            </div>
-                            <div>
-                                <picture>
-                                    <img src="images/comment.png?width=30px" alt="comments">
-                                </picture>
-                                <span>5</span>
-                            </div>
-                        </div>
-
-                        <p class="card-paragraph">Äntligen visar sig vädret från sin bästa sida och sommaren är på ingång. På vår uteservering kan du både njuta av god mat och kall dryck.</p>  
-                    </div>
-                </div>
-
-                <!--Card 4-->
-                <div class="card animate fadeInUp">
-                    <picture>
-                        <source srcset="images/pasta.jpg?as=webp&width=300px" type="image/webp">
-                        <img class="igImg" src="images/pasta.jpg?width=300px" alt="Logotyp">
-                    </picture>
-                    <div class="card-text">
-
-                        <div class="likesAndComments">
-                            <div>
-                                <picture>
-                                    <img src="images/heart.png?width=30px" alt="likes">
-                                </picture>
-                                <span>133</span>
-                            </div>
-                            <div>
-                                <picture>
-                                    <img src="images/comment.png?width=30px" alt="comments">
-                                </picture>
-                                <span>6</span>
-                            </div>
-                        </div>
-
-                        <p class="card-paragraph">Linus har experimenterat med klassiska italienska pastarätter i köket. Resultatet? Magi!</p>  
-                    </div>
-                </div>
-            </div>
-        
 
             </div>
             <button class="button animate fadeInUp">Instagram</button>
         </div>
 
+        <!--Sektion för öppettider-->
         <div id="hoursContainer">
             <h1 class="animate fadeInUp">Öppettider</h1>
             <div id="openingHrs">
@@ -228,7 +246,7 @@
             </div>
         </div>
 
-
+        <!--Bokaknapp med animation-->
         <div class="book animate fadeInUp">
             <svg width="790" height="400">
                 <a href="book.html" target="_blank">
@@ -238,6 +256,7 @@
         </div>
     </main>
 
+    <!--Footer-->
     <footer>
         <div class="logoLinks">
             <div id="logocontainer">
